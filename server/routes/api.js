@@ -37,7 +37,7 @@ exports.customer = function (req, res) {
 };
 
 exports.addCustomer = function (req, res) {
-  console.log('*** addCustomer');
+  console.log('*** addCustomer ====  ' +  req.body);
   db.getState(req.body.stateId, function(err, state) {
     if (err) {
       console.log('*** getState err');

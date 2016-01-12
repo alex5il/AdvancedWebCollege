@@ -1,8 +1,8 @@
 ﻿'use strict';
 
-define(['app'], function (app) {
+define(['app', 'services/customersService'], function (app) {
 
-    var customersController = function ($rootScope, $scope, $location, $routeParams, $timeout, config, dataService, modalService) {
+    var customersController = function ($rootScope, $scope, $location, $routeParams, $timeout, config, customersService, modalService) {
 
         var customerID = ($routeParams.customerID) ? parseInt($routeParams.customerID) : 0,
             timer,
@@ -24,10 +24,10 @@ define(['app'], function (app) {
         $scope.saveCustomer = function () {
             if ($scope.editForm.$valid) {
                 if (!$scope.customer.id) {
-                    dataService.insertCustomer($scope.customer).then(processSuccess, processError);
+                    customersService.insertCustomer($scope.customer).then(processSuccess, processError);
                 }
                 else {
-                    dataService.updateCustomer($scope.customer).then(processSuccess, processError);
+                    customersService.updateCustomer($scope.customer).then(processSuccess, processError);
                 }
             }
         };
@@ -43,7 +43,7 @@ define(['app'], function (app) {
 
             modalService.showModal({}, modalOptions).then(function (result) {
                 if (result === 'ok') {
-                    dataService.deleteCustomer($scope.customer.id).then(function () {
+                    customersService.deleteCustomer($scope.customer.id).then(function () {
                         onRouteChangeOff(); //Stop listening for location changes
                         $location.path('/customers');
                     }, processError);
@@ -53,11 +53,11 @@ define(['app'], function (app) {
 
         function init() {
             if (customerID > 0) {
-                dataService.getCustomer(customerID).then(function (customer) {
+                customersService.getCustomer(customerID).then(function (customer) {
                     $scope.customer = customer;
                 }, processError);
             } else {
-                dataService.newCustomer().then(function (customer) {
+                customersService.newCustomer().then(function (customer) {
                     $scope.customer = customer;
                 });
 
@@ -95,7 +95,7 @@ define(['app'], function (app) {
         }
 
         function getStates() {
-            dataService.getStates().then(function (states) {
+            customersService.getStates().then(function (states) {
                 $scope.states = states;
             }, processError);
         }
@@ -123,6 +123,6 @@ define(['app'], function (app) {
     };
 
     app.register.controller('CustomerEditController',
-       ['$rootScope', '$scope', '$location', '$routeParams', '$timeout', 'config', 'dataService', 'modalService', customersController]);
+       ['$rootScope', '$scope', '$location', '$routeParams', '$timeout', 'config', 'customersService', 'modalService', customersController]);
 
 });

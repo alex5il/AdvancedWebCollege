@@ -1,8 +1,8 @@
 ﻿'use strict';
 
-define(['app'], function (app) {
+define(['app', 'services/customersService'], function (app) {
     
-    var customersController = function ($scope, $location, $filter, dataService, modalService) {
+    var customersController = function ($scope, $location, $filter, customersService, modalService) {
 
         $scope.customers = [];
         $scope.filteredCustomers = [];
@@ -35,7 +35,7 @@ define(['app'], function (app) {
 
             modalService.showModal({}, modalOptions).then(function (result) {
                 if (result === 'ok') {
-                    dataService.deleteCustomer(id).then(function () {
+                    customersService.deleteCustomer(id).then(function () {
                         for (var i = 0; i < $scope.customers.length; i++) {
                             if ($scope.customers[i].id == id) {
                                 $scope.customers.splice(i, 1);
@@ -92,7 +92,7 @@ define(['app'], function (app) {
         }
 
         function getCustomersSummary() {
-            dataService.getCustomersSummary($scope.currentPage - 1, $scope.pageSize)
+            customersService.getCustomersSummary($scope.currentPage - 1, $scope.pageSize)
             .then(function (data) {
                 $scope.totalRecords = data.totalRecords;
                 $scope.customers = data.results;
@@ -119,6 +119,6 @@ define(['app'], function (app) {
     };
 
     app.register.controller('CustomersController',
-        ['$scope', '$location', '$filter', 'dataService', 'modalService', customersController]);
+        ['$scope', '$location', '$filter', 'customersService', 'modalService', customersController]);
 
 });

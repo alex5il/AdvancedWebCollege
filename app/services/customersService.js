@@ -20,7 +20,7 @@ define(['app'], function (app) {
                 function (results) {
                     return results.data;
                 });
-        }
+        };
 
         customersFactory.checkUniqueValue = function (id, property, value) {
             if (!id) id = 0;

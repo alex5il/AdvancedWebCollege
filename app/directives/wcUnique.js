@@ -1,8 +1,8 @@
 ﻿'use strict';
 
-define(['app'], function (app) {
+define(['app', 'services/customersService'], function (app) {
 
-    var wcUniqueDirective = function (dataService) {
+    var wcUniqueDirective = function (customersService) {
         return {
             restrict: 'A',
             require: 'ngModel',
@@ -11,7 +11,7 @@ define(['app'], function (app) {
                     if (!ngModel || !element.val()) return;
                     var keyProperty = scope.$eval(attrs.wcUnique);
                     var currentValue = element.val();
-                    dataService.checkUniqueValue(keyProperty.key, keyProperty.property, currentValue)
+                    customersService.checkUniqueValue(keyProperty.key, keyProperty.property, currentValue)
                         .then(function (unique) {
                             //Ensure value that being checked hasn't changed
                             //since the Ajax call was made
@@ -28,6 +28,6 @@ define(['app'], function (app) {
         }
     };
 
-    app.directive('wcUnique', ['dataService', wcUniqueDirective]);
+    app.directive('wcUnique', ['customersService', wcUniqueDirective]);
 
 });

@@ -1,10 +1,10 @@
 ﻿'use strict';
 
-define(['app'], function (app) {
+define(['app', 'services/customersService'], function (app) {
 
     //This controller retrieves data from the customersService and associates it with the $scope
     //The $scope is bound to the orders view
-    var ordersController = function ($scope, dataService) {
+    var ordersController = function ($scope, customersService) {
         $scope.customers = [];
 
         //paging
@@ -24,7 +24,7 @@ define(['app'], function (app) {
         };
 
         function getCustomers() {
-            dataService.getCustomers($scope.currentPage - 1, $scope.pageSize)
+            customersService.getCustomers($scope.currentPage - 1, $scope.pageSize)
                 .then(function (data) {
                     $scope.totalRecords = data.totalRecords;
                     $scope.customers = data.results;
@@ -35,6 +35,6 @@ define(['app'], function (app) {
 
     };
 
-    app.register.controller('OrdersController', ['$scope', 'dataService', ordersController]);
+    app.register.controller('OrdersController', ['$scope', 'customersService', ordersController]);
 
 });

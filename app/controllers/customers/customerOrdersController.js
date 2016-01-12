@@ -1,8 +1,8 @@
 ﻿'use strict';
 
-define(['app'], function (app) {
+define(['app', 'services/customersService'], function (app) {
     
-    var customerOrdersController = function ($scope, $routeParams, dataService) {
+    var customerOrdersController = function ($scope, $routeParams, customersService) {
         //Grab customerID off of the route        
         var customerID = ($routeParams.customerID) ? parseInt($routeParams.customerID) : 0;
 
@@ -13,7 +13,7 @@ define(['app'], function (app) {
 
         function init() {
             if (customerID > 0) {
-                dataService.getCustomer(customerID)
+                customersService.getCustomer(customerID)
                 .then(function (customer) {
                     $scope.customer = customer;
                 }, function (error) {
@@ -25,6 +25,6 @@ define(['app'], function (app) {
     };
 
     app.register.controller('CustomerOrdersController',
-        ['$scope', '$routeParams', 'dataService', customerOrdersController]);
+        ['$scope', '$routeParams', 'customersService', customerOrdersController]);
 
 });
