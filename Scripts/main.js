@@ -13,6 +13,7 @@ require(
         'services/config',
         'services/customersService',
         'services/modalService',
+        'services/csrfService',
         'filters/nameCityStateFilter',
         'filters/nameProductFilter',
         'controllers/navbarController',

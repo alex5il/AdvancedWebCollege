@@ -5,6 +5,10 @@
     <title>Customer Manager</title>
     
 	<!-- CSS files -->
+    <!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> &lt;!&ndash; load bootstrap css &ndash;&gt;-->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+
+    <!--// Old bootstrap-->
 	<link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Content/bootstrap-responsive.min.css" rel="stylesheet" />
     <link href="Content/styles.css" rel="stylesheet" />
@@ -16,17 +20,28 @@
     <div class="navbar navbar-fixed-top" data-ng-controller="NavbarController">
         <div class="navbar-inner">
             <div class="container">
-                <a class="brand " href="#/">
+                <a class="brand " href="/">
                     <img src="Content/Images/people.png" alt="logo"> {{ appTitle }}
                 </a>
                 <ul class="nav nav-pills navBarPadding">
-                    <li data-ng-class="{'active':highlight('/customers')}"><a href="#/customers">Customers</a></li>
-                    <li data-ng-class="{'active':highlight('/orders')}"><a href="#/orders">Orders</a></li>
-                    <li data-ng-class="{'active':highlight('/about')}"><a href="#/about">About</a></li>
+                    <li data-ng-class="{'active':highlight('/customers')}"><a href="/customers">Customers</a></li>
+                    <li data-ng-class="{'active':highlight('/orders')}"><a href="/orders">Orders</a></li>
+                    <li data-ng-class="{'active':highlight('/about')}"><a href="/about">About</a></li>
+                    <li data-ng-class="{'active':highlight('/login')}"><a href="/login">Login</a></li>
+                    <li data-ng-class="{'active':highlight('/register')}"><a href="/register">Register</a></li>
                 </ul>
             </div>
         </div>
     </div>
+
+    <!--<div class="jumbotron text-center">-->
+        <!--<h1><span class="fa fa-lock"></span> Node Authentication</h1>-->
+
+        <!--<p>Login or Register with:</p>-->
+
+        <!--<a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Local Login</a>-->
+        <!--<a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Local Signup</a>-->
+    <!--</div>-->
 
     <div data-ng-view="" id="ng-view" class="slide-animation"></div>
 

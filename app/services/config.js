@@ -7,5 +7,4 @@ define(['app'], function (app) {
     };
 
     app.value('config', value);
-
 });

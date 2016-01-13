@@ -2,10 +2,11 @@
 
 define(['services/routeResolver'], function () {
 
-    var app = angular.module('customersApp', ['ngRoute', 'ngAnimate', 'routeResolverServices', 'wc.Directives', 'wc.Animations', 'ui.bootstrap']);
+    var app = angular.module('customersApp',
+        ['ngRoute', 'ngAnimate', 'routeResolverServices', 'wc.Directives', 'wc.Animations', 'ui.bootstrap']);
 
-    app.config(['$routeProvider', 'routeResolverProvider', '$controllerProvider', '$compileProvider', '$filterProvider', '$provide', '$httpProvider',
-        function ($routeProvider, routeResolverProvider, $controllerProvider, $compileProvider, $filterProvider, $provide, $httpProvider) {
+    app.config(['$routeProvider', 'routeResolverProvider', '$controllerProvider', '$compileProvider', '$filterProvider', '$provide', '$httpProvider','$locationProvider',
+        function ($routeProvider, routeResolverProvider, $controllerProvider, $compileProvider, $filterProvider, $provide, $httpProvider, $locationProvider) {
 
             //Change default views and controllers directory using the following:
             //routeResolverProvider.routeConfig.setBaseDirectories('/app/views', '/app/controllers');
@@ -34,8 +35,15 @@ define(['services/routeResolver'], function () {
                 .when('/customeredit/:customerID', route.resolve('CustomerEdit', 'customers/'))
                 .when('/orders', route.resolve('Orders', 'orders/'))
                 .when('/about', route.resolve('About'))
+                .when('/login', route.resolve('Login'))
+                .when('/register', route.resolve('Register'))
                 .otherwise({ redirectTo: '/customers' });
 
+            // use the HTML5 History API
+            $locationProvider.html5Mode({
+                enabled: true,
+                requireBase: false
+            });
     }]);
 
     //Only needed for Breeze. Maps Q (used by default in Breeze) to Angular's $q to avoid having to call scope.$apply() 

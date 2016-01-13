@@ -64,11 +64,11 @@ define(['app', 'services/customersService'], function (app) {
                     $scope.listViewEnabled = true;
                     break;
             }
-        }
+        };
 
         $scope.navigate = function (url) {
             $location.path(url);
-        }
+        };
 
         $scope.setOrder = function (orderby) {
             if (orderby === $scope.orderby) {

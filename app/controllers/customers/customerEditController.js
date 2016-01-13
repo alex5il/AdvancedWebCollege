@@ -72,7 +72,7 @@ define(['app', 'services/customersService'], function (app) {
 
         function routeChange(event, newUrl) {
             //Navigate to newUrl if the form isn't dirty
-            if (!$scope.editForm.$dirty) return;
+            if ($scope.editForm && !$scope.editForm.$dirty) return;
 
             var modalOptions = {
                 closeButtonText: 'Cancel',
