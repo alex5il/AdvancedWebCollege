@@ -12,6 +12,27 @@ var SettingsSchema = new Schema({
   }
 });
 
+var GameReview = new Schema({
+  Title : {
+    type : String, required: true, trim: true
+  },
+  Content : {
+    type : String, required: true, trim: true
+  },
+  Score : {
+    type : Number, min: 0, max: 100
+  },
+  ReviewDate : {
+    type : Date
+  },
+  userId : {
+    type : Number
+  },
+  id : {
+    type : Number, required: true, unique: true
+  }
+});
+
 var GameSchema = new Schema({
   gameName : {
     type : String, required: true, trim: true
@@ -34,6 +55,7 @@ var GameSchema = new Schema({
   pic : {
     type : String, required: true, trim: true
   },
+  gameReviews : [GameReview],
   genre : {
     id : {
       type : Number
