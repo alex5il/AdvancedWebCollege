@@ -17,7 +17,6 @@ require(
         'services/authService',
         'filters/nameCityStateFilter',
         'filters/nameProductFilter',
-        'controllers/navbarController',
         'controllers/orders/orderChildController'
     ],
     function () {

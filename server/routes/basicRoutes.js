@@ -2,7 +2,10 @@
  * Created by Alex on 1/13/2016.
  */
 var routes = require('../routes'),
-    customerApi = require('../routes/api/customer');
+    customerApi = require('../routes/api/customer'),
+    user = require('../models/user.js'),
+    mongoose = require('mongoose'),
+    User = require('../models/user');
 
 
 module.exports = function(app, passport) {
@@ -21,19 +24,18 @@ module.exports = function(app, passport) {
 
     // =====================================
     // LOGIN ===============================
-    // =====================================
-    // process the login form
-    app.post('/api/login', passport.authenticate('local-login', {
-        successRedirect: '/customers', // redirect to the secure profile section
-        failureRedirect: '/login', // redirect back to the signup page if there is an error
-        failureFlash: true // allow flash messages
-    }));
+    // ======================================
+
+    app.post('/api/login', passport.authenticate('local-login'),
+        function(req, res) {
+            res.send(200);
+        }
+    );
 
     // =====================================
     // SIGNUP ==============================
     // =====================================
-    // process the signup form
-    app.post('/api/signup', passport.authenticate('local-signup', {
+    app.post('/api/register', passport.authenticate('local-signup', {
         successRedirect : '/customers', // redirect to the secure profile section
         failureRedirect : '/signup', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
@@ -55,7 +57,7 @@ module.exports = function(app, passport) {
     // =====================================
     app.get('/api/logout', function(req, res) {
         req.logout();
-        res.redirect('/');
+        res.send(200);
     });
 
     app.get('/', routes.index);
@@ -72,5 +74,5 @@ function isLoggedIn(req, res, next) {
         return next();
 
     // if they aren't redirect them to the home page
-    res.redirect('/');
+    res.redirect(401);
 }

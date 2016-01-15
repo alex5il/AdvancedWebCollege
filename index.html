@@ -41,12 +41,15 @@
                     <li><a href="/login">Login</a></li>
                     <li><a href="/register">Register</a></li>
                 </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">{{$root.loggedInUser.email || "Not logged in!" }}</a></li>
+                </ul>
             </div>
         </div>
     </nav>
 
     <div ng-view="" id="ng-view" class="slide-animation"></div>
-
 
     <div data-wc-overlay="" data-wc-overlay-delay="300">
         <br /><img src="/Content/images/spinner.gif" />&nbsp;&nbsp;Loading

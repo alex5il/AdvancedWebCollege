@@ -3,6 +3,7 @@ var mongoose = require('mongoose')
   , CustomerService = require('./services/customer')
   , Customer = require('./models/customer')
   , State = require('./models/state')
+  , User = require('./models/user')
   , util = require('util');
 
 // connect to database
