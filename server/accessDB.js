@@ -30,7 +30,8 @@ module.exports = {
   insertGame : GameService.insertGame,
   editGame : GameService.editGame,
   deleteGame : GameService.deleteGame,
-  getGamesByGenre : GameService.getGamesByGenre,
+  getGamesByFilter : GameService.getGamesByFilter,
+  insertReview : GameService.insertReview,
 
   getCustomers : CustomerService.getCustomers,
   getCustomersSummary : CustomerService.getCustomersSummary,

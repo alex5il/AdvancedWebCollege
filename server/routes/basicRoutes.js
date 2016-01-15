@@ -29,7 +29,8 @@ module.exports = function(app, passport) {
     app.delete('/api/dataservice/deleteGame/:id', gameApi.deleteGame);
     app.put('/api/dataservice/PutGame/:id', gameApi.editGame);
     app.post('/api/dataservice/PostGame', gameApi.insertGame);
-    app.get('/api/dataservice/GamesByGenre/:id', gameApi.byGenre);
+    app.post('/api/dataservice/PostGameReview', gameApi.postGameReview);
+    app.get('/api/dataservice/byFilters/:genre?*/:score?*/:gameName?*', gameApi.byFilters);
 
     // =====================================
     // LOGIN ===============================

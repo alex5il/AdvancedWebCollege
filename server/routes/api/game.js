@@ -19,8 +19,24 @@ exports.games = function (req, res) {
   });
 };
 
+exports.postGameReview = function(req, res){
+  console.log('*** games');
+
+  db.insertReview(req.body, function(err){
+    if (err) {
+      console.log('*** postGameReview err');
+      res.json(false);
+    } else {
+      console.log('*** postGameReview ok');
+
+      res.json(req.body);
+    }
+  });
+};
+
+
 exports.game = function (req, res) {
-  console.log('*** customer');
+  console.log('*** game');
 
   db.getGame(req.params.id, function(err, game) {
     if (err) {
@@ -82,10 +98,10 @@ exports.deleteGame = function (req, res) {
 };
 
 
-exports.byGenre = function (req, res) {
+exports.byFilters = function (req, res) {
   console.log('*** byGenre');
 
-  db.getGamesByGenre(req.params.genre, function(err) {
+  db.byFilters(req.params, function(err) {
     if (err) {
       console.log('*** byGenre err');
       res.json({'status': false});
