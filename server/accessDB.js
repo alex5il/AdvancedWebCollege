@@ -1,7 +1,7 @@
 // Module dependencies
 var mongoose = require('mongoose')
   , CustomerService = require('./services/customer')
-  , Customer = require('./models/customer')
+  , GameService = require('./services/game')
   , State = require('./models/state')
   , util = require('util');
 
@@ -23,6 +23,13 @@ module.exports = {
   closeDB: function() {
     mongoose.disconnect();
   },
+
+  getGames : GameService.getGames,
+  getGame : GameService.getGame,
+  insertGame : GameService.insertGame,
+  editGame : GameService.editGame,
+  deleteGame : GameService.deleteGame,
+  getGamesByGenre : GameService.getGamesByGenre,
 
   getCustomers : CustomerService.getCustomers,
   getCustomersSummary : CustomerService.getCustomersSummary,
