@@ -6,7 +6,7 @@ module.exports = {
   // get all the games
   getGames: function(callback) {
     console.log('*** accessDB.getGames');
-    Game.find({}, {'_id': 0, 'gameName':1, 'gameDec':1,'game':1,  'date': 1, 'pic':1, 'score': 1, 'cost': 1, 'id': 1, 'genre': 1}, function(err, games) {
+    Game.find({}, {'_id': 0, 'gameName':1, 'gameDec':1,'game':1,'gameReviews': 0,  'date': 1, 'pic':1, 'score': 1, 'cost': 1, 'id': 1, 'genre': 1}, function(err, games) {
       callback(null, games);
     });
   },
@@ -14,7 +14,7 @@ module.exports = {
   // get a games
   getGame: function(id, callback) {
     console.log('*** accessDB.getGame');
-    Game.find({'id': id}, {}, function(err, game) {
+    Game.find({'id': id}, {'_id': 0, 'gameName':1, 'gameDec':1,'game':1,'gameReviews': 1,  'date': 1, 'pic':1, 'score': 1, 'cost': 1, 'id': 1, 'genre': 1}, function(err, game) {
       callback(null, game[0]);
     });
   },
@@ -29,6 +29,7 @@ module.exports = {
     game.gameDec = req_body.gameDec;
     game.pic = req_body.pic;
     game.cost = req_body.cost;
+    game.gameReviews = {};
     game.score = req_body.score;
     game.date = req_body.date;
     game.genre = req_body.genre;
@@ -44,7 +45,7 @@ module.exports = {
   editGame: function(id, req_body, callback) {
     console.log('*** accessDB.editGame');
 
-    Game.findOne({'id': id}, {'_id': 0, 'gameName':1, 'gameDec':1,'game':1,'pic':1, 'date': 1, 'score': 1, 'cost': 1, 'id': 1, 'genre': 1}, function(err, game) {
+    Game.findOne({'id': id}, {'_id': 0, 'gameName':1, 'gameDec':1,'game':1,'pic':1,'gameReviews': 0, 'date': 1, 'score': 1, 'cost': 1, 'id': 1, 'genre': 1}, function(err, game) {
       if (err) { return callback(err); }
 
       game.gameName = req_body.gameName || game.gameName;
@@ -75,7 +76,7 @@ module.exports = {
   // get all the games
   getGamesByGenre: function(genre, callback) {
     console.log('*** accessDB.getGames');
-    Game.find({'genre':genre}, {'_id': 0, 'gameName':1, 'gameDec':1,'game':1, 'pic':1, 'date': 1, 'score': 1, 'cost': 1, 'id': 1, 'genre': 1}, function(err, games) {
+    Game.find({'genre':genre}, {'_id': 0, 'gameName':1, 'gameDec':1,'game':1, 'pic':1, 'date': 1,'gameReviews': 0, 'score': 1, 'cost': 1, 'id': 1, 'genre': 1}, function(err, games) {
       callback(null, games);
     });
   }

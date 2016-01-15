@@ -17,10 +17,10 @@ var OrderSchema = new Schema({
     type : String, required: true, trim: true
   },
   price : {
-    type : Number,
+    type : Number
   },
   quantity : {
-    type : Number,
+    type : Number
   }
 });
 
