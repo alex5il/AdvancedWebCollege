@@ -6,6 +6,7 @@ var routes = require('../routes'),
     user = require('../models/user.js'),
     mongoose = require('mongoose'),
     User = require('../models/user');
+    gameApi = require('../routes/api/game');
 
 
 module.exports = function(app, passport) {
@@ -21,6 +22,14 @@ module.exports = function(app, passport) {
     app.get('/api/dataservice/CustomersSummary', customerApi.customersSummary);
     app.get('/api/dataservice/CustomerById/:id', customerApi.customer);
     app.get('/api/dataservice/CheckUnique/:email', customerApi.checkemail);
+
+
+    app.get('/api/dataservice/Games', gameApi.games);
+    app.get('/api/dataservice/Game/:id', gameApi.game);
+    app.delete('/api/dataservice/deleteGame/:id', gameApi.deleteGame);
+    app.put('/api/dataservice/PutGame/:id', gameApi.editGame);
+    app.post('/api/dataservice/PostGame', gameApi.insertGame);
+    app.get('/api/dataservice/GamesByGenre/:id', gameApi.byGenre);
 
     // =====================================
     // LOGIN ===============================
