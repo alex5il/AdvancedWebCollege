@@ -9,6 +9,8 @@ require(
         'app',
         'directives/wcUnique',
         'directives/wcOverlay',
+        'directives/filterDirective',
+        'directives/resultTableDirective',
         'services/routeResolver',
         'services/config',
         'services/customersService',
