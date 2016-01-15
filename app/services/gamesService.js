@@ -18,6 +18,19 @@ define(['app'], function (app) {
             });
         };
 
+        gamesFactory.filteredIndex = function (game) {
+            return $http.get(serviceBase + 'byFilters/', {
+                params: {
+                    gameName: game.gameName,
+                    genre: game.genre,
+                    score: game.score
+                }
+            }).then(function (results) {
+                game.id = results.data.id;
+                return results.data;
+            });
+        };
+
 
         gamesFactory.insertGame = function (game) {
             return $http.post(serviceBase + 'PostGame', game).then(function (results) {

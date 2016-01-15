@@ -10,7 +10,11 @@ define(['app', 'services/customersService', 'services/gamesService'], function (
                 filters : "="
             },
             link: function (scope, element, attrs) {
-                console.log('asdasd');
+
+
+                scope.filterCatalog = function (itemToFilter) {
+                    gamesService.filteredIndex(itemToFilter);
+                }
             }
         }
     };
