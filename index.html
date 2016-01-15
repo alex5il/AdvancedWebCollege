@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1"/>
     <title>Customer Manager</title>
-    
+
 	<!-- CSS files -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
@@ -40,11 +40,23 @@
 
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <li><a href="/catalog">Catalog</a></li>
-                        <li><a href="/catalog">Reviews</a></li>
-                        <li><a href="/about">Games</a></li>
-                        <li><a href="/customers">Customers</a></li>
-                        <li><a href="/orders">Orders</a></li>
+                        <li><a href="/reviews">Reviews</a></li>
+
+                        <!-- Admin view -->
+                        <li class="dropdown">
+                            <a href="/about" data-toggle="dropdown" class="dropdown-toggle">Admin <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/genres">Manage Genres</a></li>
+                                <li><a href="/orders">Manage Transactions</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- User view -->
+                        <li><a href="/cart">Shopping Cart</a></li>
+                        <li><a href="/myOrders">My Transactions</a></li>
+
                         <li><a href="/about">About</a></li>
+                        <li><a href="/contact">Contact</a></li>
                         <li><a href="/login">Login</a></li>
                         <li><a href="/register">Register</a></li>
 
