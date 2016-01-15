@@ -31,6 +31,9 @@ var GameSchema = new Schema({
   id : {
     type : Number, required: true, unique: true
   },
+  pic : {
+    type : String, required: true, trim: true
+  },
   genre : {
     id : {
       type : Number
