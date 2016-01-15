@@ -26,7 +26,7 @@ module.exports = {
     var game = new Game();
 
     game.gameName = req_body.gameName;
-    game.gameDec = req_body.gameDec;
+    game.gameDesc = req_body.gameDesc;
     game.pic = req_body.pic;
     game.cost = req_body.cost;
     game.gameReviews = [];
@@ -92,16 +92,17 @@ module.exports = {
 
   // get all the games
   getGamesByFilter: function(params, callback) {
-    var myFilter = {};
+   var myFilter = {};
     if(params.genre && params.genre !=="")
       myFilter['genre'] = params.genre;
-    if(params.score && params.score !=="")
-      myFilter['score'] = params.score;
+    if(params.cost && params.cost !=="")
+      myFilter['cost'] = params.cost;
     if(params.gameName && params.gameName !=="")
       myFilter['gameName'] = params.gameName;
     console.log('*** accessDB.getGamesByFilter');
-    Game.find(myFilter, {'_id': 0, 'gameName':1, 'gameDec':1,'game':1, 'pic':1, 'date': 1,'gameReviews': 0, 'score': 1, 'cost': 1, 'id': 1, 'genre': 1}, function(err, games) {
+    Game.find(myFilter,function(err, games) {
       callback(null, games);
+
     });
   }
 };

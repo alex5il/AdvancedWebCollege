@@ -30,7 +30,7 @@ module.exports = function(app, passport) {
     app.put('/api/dataservice/PutGame/:id', gameApi.editGame);
     app.post('/api/dataservice/PostGame', gameApi.insertGame);
     app.post('/api/dataservice/PostGameReview', gameApi.postGameReview);
-    app.get('/api/dataservice/byFilters/:genre?*/:score?*/:gameName?*', gameApi.byFilters);
+    app.get('/api/dataservice/byFilters/?', gameApi.byFilters);
 
     // =====================================
     // LOGIN ===============================

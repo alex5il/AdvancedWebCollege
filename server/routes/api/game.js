@@ -101,13 +101,13 @@ exports.deleteGame = function (req, res) {
 exports.byFilters = function (req, res) {
   console.log('*** byGenre');
 
-  db.getGamesByFilter(req.params, function(err) {
+  db.getGamesByFilter(req.query, function(err, games) {
     if (err) {
-      console.log('*** byGenre err');
+      console.log('*** byFilters err');
       res.json({'status': false});
     } else {
-      console.log('*** byGenre ok');
-      res.json({'status': true});
+      console.log('*** byFilters ok');
+      res.json(games);
     }
   });
 };
