@@ -118,9 +118,9 @@
                 </div>
                 <div class="row">
                     <div class="col-xs-12">
-                        <button type="submit" class="btn btn-primary" data-ng-click="saveCustomer()" ng-disabled="editForm.$invalid || !editForm.$dirty">{{buttonText}}</button>
+                        <button type="submit" class="btn btn-primary" ng-click="saveCustomer()" ng-disabled="editForm.$invalid || !editForm.$dirty">{{buttonText}}</button>
                         &nbsp;&nbsp;
-                        <button class="btn btn-danger" data-ng-if="customer.id > 0" data-ng-click="deleteCustomer()">Delete</button>
+                        <button class="btn btn-danger" data-ng-if="customer.id > 0" ng-click="deleteCustomer()">Delete</button>
                     </div>
                 </div>
                 <div class="row">

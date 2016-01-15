@@ -14,6 +14,7 @@ require(
         'services/customersService',
         'services/modalService',
         'services/csrfService',
+        'services/authService',
         'filters/nameCityStateFilter',
         'filters/nameProductFilter',
         'controllers/navbarController',

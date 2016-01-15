@@ -1,11 +1,11 @@
 ﻿'use strict';
 
-define(['app', 'services/csrfService'], function (app) {
+define(['app', 'services/csrfService', 'services/authService'], function (app) {
 
-    var loginController = function ($scope, csrfService) {
+    var loginController = function ($scope, csrfService, authService) {
         $scope.tokenValue = csrfService;
     };
 
-    app.register.controller('LoginController', ['$scope', 'csrfService', loginController]);
+    app.register.controller('LoginController', ['$scope', 'csrfService', 'authService', loginController]);
 
 });
