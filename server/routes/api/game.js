@@ -101,7 +101,7 @@ exports.deleteGame = function (req, res) {
 exports.byFilters = function (req, res) {
   console.log('*** byGenre');
 
-  db.byFilters(req.params, function(err) {
+  db.getGamesByFilter(req.params, function(err) {
     if (err) {
       console.log('*** byGenre err');
       res.json({'status': false});

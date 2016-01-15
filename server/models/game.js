@@ -41,19 +41,19 @@ var GameSchema = new Schema({
     type : String, required: true, trim: true
   },
   date : {
-    type : Date, required: true, trim: true
+    type : Date, required: false, trim: true
   },
   score : {
-    type : Number, required: true
+    type : Number, required: false
   },
   cost : {
-    type : Number, required: true
+    type : Number, required: false
   },
   id : {
     type : Number, required: true, unique: true
   },
   pic : {
-    type : String, required: true, trim: true
+    type : String, required: false, trim: true
   },
   gameReviews : [GameReview],
   genre : {
@@ -61,10 +61,10 @@ var GameSchema = new Schema({
       type : Number
     },
     title : {
-      type : String, required: true, trim: true
+      type : String, required: false, trim: true
     },
     desc : {
-      type :  String, required: true, trim: true
+      type :  String, required: false, trim: true
     }
   }
 });
