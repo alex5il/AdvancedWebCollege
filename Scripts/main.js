@@ -9,14 +9,17 @@ require(
         'app',
         'directives/wcUnique',
         'directives/wcOverlay',
+        'directives/filterDirective',
+        'directives/resultTableDirective',
+        'directives/gameCreateDirective',
         'services/routeResolver',
         'services/config',
         'services/customersService',
         'services/modalService',
         'services/csrfService',
+        'services/authService',
         'filters/nameCityStateFilter',
         'filters/nameProductFilter',
-        'controllers/navbarController',
         'controllers/orders/orderChildController'
     ],
     function () {

@@ -6,7 +6,7 @@ module.exports = {
   // get all the games
   getGames: function(callback) {
     console.log('*** accessDB.getGames');
-    Game.find({}, {'_id': 0, 'gameName':1, 'gameDec':1, 'date': 1, 'score': 1, 'cost': 1, 'id': 1, 'genre': 1}, function(err, games) {
+    Game.find({}, {'_id': 0, 'gameName':1, 'gameDec':1,'game':1,'gameReviews': 0,  'date': 1, 'pic':1, 'score': 1, 'cost': 1, 'id': 1, 'genre': 1}, function(err, games) {
       callback(null, games);
     });
   },
@@ -14,7 +14,7 @@ module.exports = {
   // get a games
   getGame: function(id, callback) {
     console.log('*** accessDB.getGame');
-    Game.find({'id': id}, {}, function(err, game) {
+    Game.find({'id': id}, {'_id': 0, 'gameName':1, 'gameDec':1,'game':1,'gameReviews': 1,  'date': 1, 'pic':1, 'score': 1, 'cost': 1, 'id': 1, 'genre': 1}, function(err, game) {
       callback(null, game[0]);
     });
   },
@@ -26,8 +26,10 @@ module.exports = {
     var game = new Game();
 
     game.gameName = req_body.gameName;
-    game.gameDec = req_body.gameDec;
+    game.gameDesc = req_body.gameDesc;
+    game.pic = req_body.pic;
     game.cost = req_body.cost;
+    game.gameReviews = [];
     game.score = req_body.score;
     game.date = req_body.date;
     game.genre = req_body.genre;
@@ -35,19 +37,37 @@ module.exports = {
 
     game.save(function(err, game) {
       if (err)
-        {console.log('*** new game save err: ' + err); return callback(err); }
+      {console.log('*** new game save err: ' + err); return callback(err); }
       callback(null, game.id);
     });
   },
 
+
+  insertReview: function(id,req_body, callback) {
+    console.log('*** accessDB.insertReview');
+
+    Game.findOne({'id': id}, {'_id': 0, 'gameName':0, 'gameDec':0,'game':0,'pic':0,'gameReviews': 1, 'date': 0, 'score': 0, 'cost': 0, 'id': 0, 'genre': 0}, function(err, game) {
+      if (err) { return callback(err); }
+
+      game.gameReviews = game.gameReviews.push(req_body.gameReviews)
+      game.save(function(err, game) {
+        if (err)
+        {console.log('*** new review save err: ' + err); return callback(err); }
+        callback(null, game.id);
+      });
+    });
+  },
+
+  // insert a game
   editGame: function(id, req_body, callback) {
     console.log('*** accessDB.editGame');
 
-    Game.findOne({'id': id}, {'_id': 0, 'gameName':1, 'gameDec':1, 'date': 1, 'score': 1, 'cost': 1, 'id': 1, 'genre': 1}, function(err, game) {
+    Game.findOne({'id': id}, {'_id': 0, 'gameName':1, 'gameDec':1,'game':1,'pic':1,'gameReviews': 0, 'date': 1, 'score': 1, 'cost': 1, 'id': 1, 'genre': 1}, function(err, game) {
       if (err) { return callback(err); }
 
       game.gameName = req_body.gameName || game.gameName;
       game.gameDec = req_body.gameDec || game.gameDec;
+      game.pic = req_body.pic || game.pic;
       game.cost = req_body.cost || game.cost;
       game.score = req_body.score || game.score;
       game.date = req_body.date || game.date;
@@ -71,10 +91,18 @@ module.exports = {
   },
 
   // get all the games
-  getGamesByGenre: function(genre, callback) {
-    console.log('*** accessDB.getGames');
-    Game.find({'genre':genre}, {'_id': 0, 'gameName':1, 'gameDec':1, 'date': 1, 'score': 1, 'cost': 1, 'id': 1, 'genre': 1}, function(err, games) {
+  getGamesByFilter: function(params, callback) {
+   var myFilter = {};
+    if(params.genre && params.genre !=="")
+      myFilter['genre'] = params.genre;
+    if(params.cost && params.cost !=="")
+      myFilter['cost'] = params.cost;
+    if(params.gameName && params.gameName !=="")
+      myFilter['gameName'] = params.gameName;
+    console.log('*** accessDB.getGamesByFilter');
+    Game.find(myFilter,function(err, games) {
       callback(null, games);
+
     });
   }
 };
