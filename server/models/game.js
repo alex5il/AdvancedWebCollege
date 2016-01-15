@@ -46,8 +46,8 @@ var GameSchema = new Schema({
 
 GameSchema.index({ id: 1, type: 1 }); // schema level
 
-// I make sure this is the last pre-save middleware (just in case)
-var Settings = mongoose.model('settings', SettingsSchema);
+/*// I make sure this is the last pre-save middleware (just in case)
+var Settings = mongoose.model('settings', SettingsSchema);*/
 
 GameSchema.pre('save', function(next) {
   var doc = this;
