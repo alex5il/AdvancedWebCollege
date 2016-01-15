@@ -5,61 +5,48 @@
     <title>Customer Manager</title>
     
 	<!-- CSS files -->
-    <!--<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> &lt;!&ndash; load bootstrap css &ndash;&gt;-->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
 
     <!--// Old bootstrap-->
-	<link href="Content/bootstrap.css" rel="stylesheet" />
-    <link href="Content/bootstrap-responsive.min.css" rel="stylesheet" />
+	<!--<link href="Content/bootstrap.css" rel="stylesheet" />-->
+    <!--<link href="Content/bootstrap-responsive.min.css" rel="stylesheet" />-->
     <link href="Content/styles.css" rel="stylesheet" />
     <link href="Content/animations.css" rel="stylesheet" />
 </head>
 <body data-ng-cloak="">
 
-    <!-- Angular div that addresses a controller - NavbarController for the Menu -->
-    <div class="navbar navbar-fixed-top" data-ng-controller="NavbarController">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="brand " href="/">
-                    <img src="Content/Images/people.png" alt="logo"> {{ appTitle }}
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">
+                    <img src="Content/Images/people.png" alt="logo" width="20px" height="20px"> {{ appTitle }}
                 </a>
-                <ul class="nav nav-pills navBarPadding">
-                    <li data-ng-class="{'active':highlight('/customers')}"><a href="/customers">Customers</a></li>
-                    <li data-ng-class="{'active':highlight('/orders')}"><a href="/orders">Orders</a></li>
-                    <li data-ng-class="{'active':highlight('/about')}"><a href="/about">About</a></li>
-                    <li data-ng-class="{'active':highlight('/login')}"><a href="/login">Login</a></li>
-                    <li data-ng-class="{'active':highlight('/register')}"><a href="/register">Register</a></li>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="/customers">Home</a></li>
+                    <li><a href="/customers">Customers</a></li>
+                    <li><a href="/orders">Orders</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/login">Login</a></li>
+                    <li><a href="/register">Register</a></li>
                 </ul>
             </div>
         </div>
-    </div>
+    </nav>
 
-    <!--<div class="jumbotron text-center">-->
-        <!--<h1><span class="fa fa-lock"></span> Node Authentication</h1>-->
+    <div ng-view="" id="ng-view" class="slide-animation"></div>
 
-        <!--<p>Login or Register with:</p>-->
-
-        <!--<a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Local Login</a>-->
-        <!--<a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Local Signup</a>-->
-    <!--</div>-->
-
-    <div data-ng-view="" id="ng-view" class="slide-animation"></div>
-
-    <div id="footer">
-        <div class="navbar navbar-fixed-bottom">
-            <div class="navbar-inner footer">
-                <div class="container">
-                    <footer>
-                        <div class="row">
-                            <div class="span12">
-                                Created by <a href="http://twitter.com/DanWahlin" target="_blank">Dan Wahlin</a>
-                            </div>
-                        </div>
-                   </footer>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div data-wc-overlay="" data-wc-overlay-delay="300">
         <br /><img src="/Content/images/spinner.gif" />&nbsp;&nbsp;Loading
