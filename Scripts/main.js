@@ -11,6 +11,7 @@ require(
         'directives/wcOverlay',
         'directives/filterDirective',
         'directives/resultTableDirective',
+        'directives/gameCreateDirective',
         'services/routeResolver',
         'services/config',
         'services/customersService',
