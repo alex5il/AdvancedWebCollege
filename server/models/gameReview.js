@@ -5,7 +5,7 @@ var mongoose = require('mongoose')
 mongoose.models = {};
 mongoose.modelSchemas = {};
 
-var GameReview = new Schema({
+var GameReviewSchema = new Schema({
   title : {
     type : String, required: true, trim: true
   },
