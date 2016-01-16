@@ -52,6 +52,12 @@ define (['app'], function (app){
             });
         };
 
+        reviewsFactory.groupByScore = function (gameName) {
+            return $http.get(serviceBase + 'groupByScore/' + gameName).then(function (status){
+                return status.data;
+            });
+        };
+
         reviewsFactory.deleteReview = function (id) {
             return $http.delete(serviceBase + 'deleteReview/' + id).then(function (status){
                 return status.data;

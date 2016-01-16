@@ -2,7 +2,7 @@
 
 define(['app'], function (app) {
 
-    var authService = function ($http, $q, $rootScope) {
+    var authService = function ($http, $q, $window) {
         var serviceBase = '/api/',
             authFactory = {};
 
@@ -20,11 +20,11 @@ define(['app'], function (app) {
                 // handle success
                 .success(function (data, status) {
                     if(status === 200 && data){
-                        $rootScope.loggedInUser = user;
+                        $window.sessionStorage.setItem('user-email', JSON.stringify(user.email));
                         user = true;
                         deferred.resolve();
                     } else {
-                        $rootScope.loggedInUser = null;
+                        $window.sessionStorage.removeItem('user-email');
                         user = false;
                         deferred.reject();
                     }
@@ -40,7 +40,7 @@ define(['app'], function (app) {
         };
 
         authFactory.isLoggedIn = function () {
-            if(user) {
+            if($window.sessionStorage.getItem('user-email') !== undefined) {
                 return true;
             } else {
                 return false;
@@ -100,5 +100,5 @@ define(['app'], function (app) {
         return authFactory;
     };
 
-    app.factory('authService', ['$http', '$q', '$rootScope',  authService]);
+    app.factory('authService', ['$http', '$q', '$window',  authService]);
 });
