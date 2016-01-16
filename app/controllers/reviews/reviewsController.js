@@ -10,33 +10,9 @@ define(['app'], function (app) {
         $scope.orderby = 'reviewDate';
         $scope.reverse = false;
 
-        // Paging
-        $scope.totalRecords = 0;
-        $scope.pageSize = 10;
-        $scope.currentPage = 1;
-
-        init();
-
-        $scope.pageChanged = function (page){
-          $scope.currentPage = page;
-            getReviewsSummary();
-        };
-
-        function getReviewsSummary() {
-            reviewsService.getReviews($scope.currentPage - 1, $scope.pageSize)
-            .then(function(data) {
-                $scope.totalRecords = data.totalRecords;
-                $scope.customers = data.results;
-                filterReviews('');
-            }, function (error){
-                alert(error.message);
-            });
-        };
-
-        function  filterReviews(filterText){
-            $scope.filteredReviews = $filter("");
-        }
-
+        $scope.filters = {};
+        $scope.filters.result = {};
+        $scope.filters.type = "reviews";
     };
 
     app.register.controller('ReviewsController', ['$scope', reviewsController]);

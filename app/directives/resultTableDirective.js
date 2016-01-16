@@ -21,17 +21,18 @@ define(['app', 'services/customersService', 'services/gamesService'], function (
                         break;
                     case 'reviews': // TODO reviews
                         $scope.result.tuples = [
-                            {header:'#', value: 'id'}, {header:'name', value: 'gameName'}, {header:'description', value: 'gameDesc'},
-                            {header:'genre', value: 'genre'},{header:'cost', value: 'cost'}, {header:'score', value: 'score'}];
+                            {header:'#', value: 'id'}, {header:'Game', value:'gameId'} , {header:'Title', value: 'title'}, {header:'Score', value: 'score'},
+                            {header:'Date', value: 'reviewDate'}];
                         break;
                 }
 
                 $scope.pageChanged = function() {
                     console.log('Page changed to: ' + $scope.currentPage);
+
                 };
 
-                $scope.itemsPerPage = 3;
-                $scope.totalItems = 64;
+                $scope.itemsPerPage = 5;
+                $scope.totalItems = $scope.filters.result.length;
                 $scope.currentPage = 1;
                 $scope.maxSize = 5;
             }

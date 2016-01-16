@@ -15,12 +15,15 @@
             <tr ng-repeat="item in filters.result.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))" ng-if="filters.type === 'reviews'">
                 <td>{{item[result.tuples[0].value]}}</td>
                 <td>{{item[result.tuples[1].value]}}</td>
+                <td>{{item[result.tuples[2].value]}}</td>
+                <td>{{item[result.tuples[3].value]}}</td>
+                <td>{{item[result.tuples[4].value]}}</td>
             </tr>
         </tbody>
     </table>
 </div>
 
 <div>
-    <uib-pagination ng-change="pageChanged()" total-items="items.length" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" items-per-page="itemsPerPage"></uib-pagination>
+    <uib-pagination ng-change="pageChanged()" total-items="totalItems" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" items-per-page="itemsPerPage"></uib-pagination>
 </div>
 
