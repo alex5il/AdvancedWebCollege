@@ -67,8 +67,10 @@ module.exports = {
     var myFilter = {};
     if(params.gameName && params.gameName !=="")
       myFilter['gameName'] = params.gameName;
+    if(params.title && params.title !=="")
+      myFilter['title'] = params.title;
     if(params.score && params.score !=="")
-      myFilter['score'] = params.score;
+      myFilter['score'] = { $lt: params.score };
     console.log('*** accessDB.getGamesByFilter');
     GameReview.find(myFilter,function(err, gameReview) {
       callback(null, gameReview);

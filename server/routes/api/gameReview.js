@@ -17,20 +17,6 @@ exports.insertGameReview = function (req, res) {
 
 };
 
-exports.groupByScore = function (req, res) {
-  console.log('*** groupByScore');
-
-  db.groupByScore(req.params.gameName, function(err,gamesR) {
-      if (err) {
-        console.log('*** byFilters err');
-        res.json({'status': false});
-      } else {
-        console.log('*** byFilters ok');
-        res.json(gamesR);
-      }
-    });
-};
-
  exports.editGameReview = function (req, res) {
   console.log('*** editGameReview');
 
@@ -61,18 +47,32 @@ exports.deleteGameReview = function (req, res) {
 };
 
 
-exports.byFilters = function (req, res) {
-  console.log('*** byFilters');
+  exports.byFilters = function (req, res) {
+    console.log('*** byFilters');
 
-  db.getGamesReviewByFilter(req.query, function(err, gamesR) {
-    if (err) {
-      console.log('*** byFilters err');
-      res.json({'status': false});
-    } else {
-      console.log('*** byFilters ok');
-      res.json(gamesR);
-    }
+    db.getGamesReviewByFilter(req.query, function(err, gamesR) {
+      if (err) {
+        console.log('*** byFilters err');
+        res.json({'status': false});
+      } else {
+        console.log('*** byFilters ok');
+        res.json(gamesR);
+      }
   });
+
+  exports.groupByScore = function (req, res) {
+    console.log('*** groupByScore');
+
+    db.groupByScore(req.params.gameName, function(err,gamesR) {
+      if (err) {
+        console.log('*** byFilters err');
+        res.json({'status': false});
+      } else {
+        console.log('*** byFilters ok');
+        res.json(gamesR);
+      }
+    });
+  };
 };
 
 
