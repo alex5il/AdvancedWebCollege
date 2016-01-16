@@ -6,7 +6,7 @@
             <th>body</th>
         </thead>
         <tbody>
-            <tr ng-repeat="item in items">
+            <tr ng-repeat="item in items.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))">
                 <td>id</td>
                 <td>{{item.name}}</td>
                 <td>{{item.body}}</td>
@@ -16,7 +16,7 @@
 </div>
 
 <div>
-    <uib-pagination ng-change="pageChanged()" total-items="items.length" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false"></uib-pagination>
+    <uib-pagination ng-change="pageChanged()" total-items="items.length" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" items-per-page="itemsPerPage"></uib-pagination>
     <pre>Page: {{currentPage}}</pre>
 </div>
 
