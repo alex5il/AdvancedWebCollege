@@ -99,7 +99,9 @@ module.exports = {
     if(params.gameName && params.gameName !=="")
       myFilter['gameName'] = params.gameName;
     console.log('*** accessDB.getGamesByFilter');
-    Game.find(myFilter,function(err, games) {
+    console.log(params.itemsPerPage);
+    console.log(params.pageNumber);
+    Game.find(myFilter, { skip: params.itemsPerPage * params.pageNumber, limit: params.itemsPerPage } ,function(err, games) {
       callback(null, games);
 
     });
