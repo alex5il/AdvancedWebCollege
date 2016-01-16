@@ -31,11 +31,11 @@ define(['app', 'services/reviewsService', 'services/gamesService'], function (ap
                     });
                 };
 
-                scope.$watch('page.pageNumber', function(newVal, oldVal) {
-                    if (newVal !== oldVal) {
-                        scope.filterCatalog();
-                    }
-                });
+                //scope.$watch('page.pageNumber', function(newVal, oldVal) {
+                //    if (newVal !== oldVal) {
+                //        scope.filterCatalog();
+                //    }
+                //});
 
                 switch(scope.filters.type) {
                     case 'catalog':
