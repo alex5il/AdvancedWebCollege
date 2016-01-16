@@ -130,6 +130,7 @@ nav.colored {
 .game-video {
     width: 60%;
     height: auto;
+    padding-top: 25px;
 }
 
 /* ========== Drop down menu sliding animation ============= */
