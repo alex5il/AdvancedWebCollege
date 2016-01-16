@@ -1,6 +1,6 @@
 <h5>Filters:</h5>
 
-<form class="form-inline">
+<form class="form-inline" ng-if="filters.type === 'catalog'">
     <div class="form-group large-margin-right">
         <label class="small-margin-right">Game Title:</label>
         <input type="text" class="form-control large-input" placeholder="Fallout" ng-model="inputFilters.gameName">
@@ -12,6 +12,14 @@
     <div class="form-group large-margin-right">
         <label class="small-margin-right">Cost above:</label>
         <input type="number" class="form-control small-input" placeholder="Cost" ng-model="inputFilters.score">
+    </div>
+    <button type="submit" class="btn btn-primary pull-right" ng-click="filterCatalog(inputFilters)">Search</button>
+</form>
+
+<form class="form-inline" ng-if="filters.type === 'reviews'">
+    <div class="form-group large-margin-right">
+        <label class="small-margin-right">Review name:</label>
+        <input type="text" class="form-control large-input" placeholder="Fallout" ng-model="inputFilters.reviewName">
     </div>
     <button type="submit" class="btn btn-primary pull-right" ng-click="filterCatalog(inputFilters)">Search</button>
 </form>

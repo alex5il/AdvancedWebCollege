@@ -10,26 +10,29 @@ define(['app', 'services/customersService', 'services/gamesService'], function (
                 filters : "="
             },
             controller: function ($scope) {
-                console.log('result table loaded');
+                $scope.result = {};
+                $scope.result.tuples = [];
 
-                $scope.items = [{name:'alex1', body:'bb'},{name:'alex2', body:'bb'},{name:'alex3', body:'bb'},
-                    {name:'alex4', body:'bb'},{name:'alex5', body:'bb'},{name:'alex6', body:'bb'},
-                    {name:'alex7', body:'bb'},{name:'alex8', body:'bb'},{name:'alex9', body:'bb'},
-                    {name:'alex10', body:'bb'},{name:'alex11', body:'bb'},{name:'alex12', body:'bb'},{name:'last', body:'bb'}];
-
-                $scope.itemsPerPage = 3;
-
-                $scope.totalItems = 64;
-                $scope.currentPage = 4;
-
-                $scope.setPage = function (pageNo) {
-                    $scope.currentPage = pageNo;
-                };
+                switch($scope.filters.type) {
+                    case 'catalog':
+                        $scope.result.tuples = [
+                            {header:'#', value: 'id'}, {header:'name', value: 'gameName'}, {header:'description', value: 'gameDesc'},
+                            {header:'genre', value: 'genre'},{header:'cost', value: 'cost'}, {header:'score', value: 'score'}];
+                        break;
+                    case 'reviews': // TODO reviews
+                        $scope.result.tuples = [
+                            {header:'#', value: 'id'}, {header:'name', value: 'gameName'}, {header:'description', value: 'gameDesc'},
+                            {header:'genre', value: 'genre'},{header:'cost', value: 'cost'}, {header:'score', value: 'score'}];
+                        break;
+                }
 
                 $scope.pageChanged = function() {
                     console.log('Page changed to: ' + $scope.currentPage);
                 };
 
+                $scope.itemsPerPage = 3;
+                $scope.totalItems = 64;
+                $scope.currentPage = 1;
                 $scope.maxSize = 5;
             }
         }

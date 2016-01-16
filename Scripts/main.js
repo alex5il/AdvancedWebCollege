@@ -21,6 +21,7 @@ require(
         'services/modalService',
         'services/csrfService',
         'services/authService',
+        'services/reviewsService',
         'filters/nameCityStateFilter',
         'filters/nameProductFilter',
         'controllers/orders/orderChildController'
