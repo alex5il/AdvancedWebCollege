@@ -10,7 +10,7 @@ define(['app', 'services/customersService', 'services/gamesService'], function (
                 filters : "="
             },
             link: function (scope, element, attrs) {
-
+                scope.inputFilters = {};
 
                 scope.filterCatalog = function (itemToFilter) {
                     gamesService.filteredIndex(itemToFilter);
