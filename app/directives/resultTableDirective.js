@@ -9,8 +9,26 @@ define(['app', 'services/customersService', 'services/gamesService'], function (
             scope: {
                 filters : "="
             },
-            link: function (scope, element, attrs) {
+            controller: function ($scope) {
                 console.log('result table loaded');
+
+                $scope.items = [{name:'alex', body:'bb'},{name:'alex', body:'bb'},{name:'alex', body:'bb'},
+                    {name:'alex', body:'bb'},{name:'alex', body:'bb'},{name:'alex', body:'bb'},
+                    {name:'alex', body:'bb'},{name:'alex', body:'bb'},{name:'alex', body:'bb'},
+                    {name:'alex', body:'bb'},{name:'alex', body:'bb'},{name:'alex', body:'bb'}];
+
+                $scope.totalItems = 64;
+                $scope.currentPage = 4;
+
+                $scope.setPage = function (pageNo) {
+                    $scope.currentPage = pageNo;
+                };
+
+                $scope.pageChanged = function() {
+                    console.log('Page changed to: ' + $scope.currentPage);
+                };
+
+                $scope.maxSize = 5;
             }
         }
     };
