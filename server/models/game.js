@@ -70,9 +70,9 @@ GameSchema.pre('save', function(next) {
   var doc = this;
   // Calculate the next id on new Customers only.
   if (this.isNew) {
-    sse.findOneAndUpdate( {"collectionName": "games"}, { $inc: { nextSeqNumber: 1 } }, function (err, settings) {
+    sse.findOneAndUpdate( {"collectionName": "games"}, { $inc: { nextSeqNumber: 1 } }, function (err, games) {
       if (err) next(err);
-      //doc.id = settings.nextSeqNumber - 1; // substract 1 because I need the 'current' sequence number, not the next
+      doc.id = games.nextSeqNumber - 1; // substract 1 because I need the 'current' sequence number, not the next
       next();
     });
   } else {

@@ -1,10 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+<div class="row">
+    <div class="col-xs-6">
 
-</body>
-</html>
+        <div class="row">
+            <div class="col-xs-5">
+
+                <img ng-src="catalog.pic" width="150" height="150" />
+
+            </div>
+
+            <div class="col-xs-7">
+                <h2 ng-model="catalog.gameName"> </h2>
+                <div><b>Genre:</b> {{catalog.genre}} </div>
+
+                <div><b>Release Date:</b> {{catalog.released}})</div>
+
+                <div><b>Description:</b> {{catalog.gameDesc}} </div>
+
+                <div><b>Cost:</b> {{catalog.cost}} </div>
+            </div>
+        </div>
+
+        <div class="row score-badge">
+            <div class="col-xs-4 game-score">
+                {{catalog.AverageScore}}
+            </div>
+            <div class="col-xs-4 glyphicon review-icon"></div>
+        </div>
+
+        <div class="row bottom-links">
+            <div class="col-xs-3">
+                <button class = "btn btn-primary glyphicon glyphicon-align-justify"> Review! </button>
+            </div>
+
+            <div class="col-xs-3">
+                <button type="button" class="btn btn-success">Purchase!</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="col-xs-offset-2 col-xs-4" id="myPie"></div>
+
+</div>
