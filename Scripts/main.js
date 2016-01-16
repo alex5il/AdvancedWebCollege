@@ -15,6 +15,7 @@ require(
         'directives/reviewCreateDirective',
         'directives/reviewsTableDirective',
         'directives/reviewsFilterDirective',
+        'directives/webServiceDirective',
         'services/routeResolver',
         'services/config',
         'services/customersService',
