@@ -10,6 +10,10 @@ define(['app', 'services/gamesService'], function (app) {
                 data: "="
             },
             link: function (scope, element, attrs) {
+                var badReview = 20;
+                var goodReview = 30;
+                var greatReview = 10;
+
                 var pie = new d3pie("myPie", {
                     header: {
                         title: {
