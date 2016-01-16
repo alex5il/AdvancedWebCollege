@@ -4,14 +4,10 @@
     src: url(/Content/fonts/OpenSans-Regular.ttf);
 }
 
-
-
 html {
     overflow-y: scroll;
     overflow-x: hidden;
 }
-
-
 
 body {
     padding-top: 50px;
@@ -98,28 +94,29 @@ nav.colored {
 .top-list div.item-description {
     display: inline-block;
 }
+
 .top-list div.item-description label {
     font-size: large;
-    margin-top:10px;
-    margin-bottom:10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: 275px;
 }
 
 .top-list div.item-rating {
     display: inline-block;
-    position:relative;
-    right:0;
-    margin-top:10px;
+    position: relative;
+    right: 0;
+    margin-top: 10px;
     height: 35px;
     width: 60px;
     vertical-align: top;
     font-size: x-large;
     background: #26272b;
-    box-shadow: rgba(0,0,0,0.75) 0 0 3px,rgba(255,255,255,0.3) 0 0 1px inset;
+    box-shadow: rgba(0, 0, 0, 0.75) 0 0 3px, rgba(255, 255, 255, 0.3) 0 0 1px inset;
     color: #f1f1f4;
-    text-shadow: rgba(0,0,0,0.5) 0 1px 5px;
+    text-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
     text-align: center;
-    font-family: "proxima-nova","Helvetica Neue Light","Helvetica Neue",sans-serif;
+    font-family: "proxima-nova", "Helvetica Neue Light", "Helvetica Neue", sans-serif;
     font-weight: 600;
     border-radius: 400px;
 }
@@ -181,11 +178,11 @@ nav.colored {
 /* ========== Game details ============= */
 .score-badge .game-score {
     background: #26272b;
-    box-shadow: rgba(0,0,0,0.75) 0 0 3px,rgba(255,255,255,0.3) 0 0 1px inset;
+    box-shadow: rgba(0, 0, 0, 0.75) 0 0 3px, rgba(255, 255, 255, 0.3) 0 0 1px inset;
     color: #f1f1f4;
-    text-shadow: rgba(0,0,0,0.5) 0 1px 5px;
+    text-shadow: rgba(0, 0, 0, 0.5) 0 1px 5px;
     text-align: center;
-    font-family: "proxima-nova","Helvetica Neue Light","Helvetica Neue",sans-serif;
+    font-family: "proxima-nova", "Helvetica Neue Light", "Helvetica Neue", sans-serif;
     font-weight: 600;
     z-index: 400;
     border-radius: 400px;
@@ -207,10 +204,9 @@ nav.colored {
     margin-top: 60px;
 }
 
-
 /* ========== Review details ============= */
 section article.review-post {
-    font-family: "proxima-nova","Helvetica Neue Light","Helvetica Neue",sans-serif;
+    font-family: "proxima-nova", "Helvetica Neue Light", "Helvetica Neue", sans-serif;
     font-weight: 400;
 }
 
@@ -247,22 +243,20 @@ section article.review-post div.content {
     background-color: #F4FDCF;
 }
 
-
-
 .form-control.large-input {
-    width:200px;
+    width: 200px;
 }
 
-.form-control.small-input{
-    width:100px;
+.form-control.small-input {
+    width: 100px;
 }
 
 .small-margin-right {
-    margin-right:5px;
+    margin-right: 5px;
 }
 
 .large-margin-right {
-    margin-right:10px;
+    margin-right: 10px;
 }
 
 #ng-view {
@@ -278,34 +272,34 @@ section article.review-post div.content {
     color: white;
 }
 
-.white:hover{
+.white:hover {
     color: white;
 }
 
 .card {
-    background-color:#fff;
+    background-color: #fff;
     border: 1px solid #d4d4d4;
-    height:100px;
+    height: 100px;
     width: 225px;
     margin-bottom: 20px;
     position: relative;
 }
 
 .cardHeader {
-    background-color:#027FF4;
-    font-size:14pt;
-    color:white;
-    padding:5px;
+    background-color: #027FF4;
+    font-size: 14pt;
+    color: white;
+    padding: 5px;
 }
 
 .cardClose {
     color: white;
-    font-weight:bold;
-    margin-right:5px;
+    font-weight: bold;
+    margin-right: 5px;
 }
 
 .cardContainer {
-    width:95%;
+    width: 95%;
 }
 
 .cardBody {
@@ -313,12 +307,14 @@ section article.review-post div.content {
 }
 
 .cardBodyRight {
-    margin-left:20px;
-    margin-top:10px;
+    margin-left: 20px;
+    margin-top: 10px;
 }
 
 .cardImage {
-    height:50px;width:50px;margin-top:10px;
+    height: 50px;
+    width: 50px;
+    margin-top: 10px;
 }
 
 .lastRow {
@@ -326,15 +322,15 @@ section article.review-post div.content {
 }
 
 .indent {
-    margin-left:5px;
+    margin-left: 5px;
 }
 
 .ordersTable {
-    width:85%;
+    width: 85%;
 }
 
 .orders th, .customers th {
-    width:20%;
+    width: 20%;
     cursor: pointer;
 }
 
@@ -348,14 +344,13 @@ section article.review-post div.content {
     vertical-align: middle;
 }
 
-
 #submitCustomer {
-    margin-left:50px;
+    margin-left: 50px;
     margin-top: -8px;
 }
 
 .close {
-    font-size:15pt;
+    font-size: 15pt;
     opacity: 1.0;
 }
 
@@ -365,7 +360,7 @@ section article.review-post div.content {
 }
 
 .btn.active {
-  background-color: #f7f7f7;
+    background-color: #f7f7f7;
 }
 
 /* ng-cloak */
@@ -378,17 +373,18 @@ section article.review-post div.content {
 }
 
 input.ng-invalid, select.ng-invalid {
-  border-left: 5px solid #E03930;
+    border-left: 5px solid #E03930;
 }
+
 input.ng-valid, select.ng-valid {
-  border-left: 5px solid #57A83F;
+    border-left: 5px solid #57A83F;
 }
 
 .errorMessage {
-    position:absolute;
+    position: absolute;
     padding: 5px;
     background-color: #E03930;
-    color:black;
+    color: black;
 }
 
 .editIcon {
@@ -400,9 +396,32 @@ input.ng-valid, select.ng-valid {
 }
 
 /* wcOverlay directive CSS styles */
-.overlayContainer { display: none;}
-.overlayBackground { top:0px; left:0px; padding-left:100px;position:absolute; z-index:1000;height:100%;width:100%;background-color:#808080;opacity:0.3;}
-.overlayContent { position:absolute; border: 1px solid #000; background-color:#fff; font-weight: bold;height: 100px;width: 300px;z-index:1000;text-align:center;}
+.overlayContainer {
+    display: none;
+}
+
+.overlayBackground {
+    top: 0px;
+    left: 0px;
+    padding-left: 100px;
+    position: absolute;
+    z-index: 1000;
+    height: 100%;
+    width: 100%;
+    background-color: #808080;
+    opacity: 0.3;
+}
+
+.overlayContent {
+    position: absolute;
+    border: 1px solid #000;
+    background-color: #fff;
+    font-weight: bold;
+    height: 100px;
+    width: 300px;
+    z-index: 1000;
+    text-align: center;
+}
 
 /* ========== API Multiple columns ============= */
 div #games p {
@@ -426,7 +445,7 @@ div #games h2 {
 .fountainG {
     position: absolute;
     top: 0;
-    background-color: rgb(0,0,0);
+    background-color: rgb(0, 0, 0);
     width: 28px;
     height: 28px;
     animation-name: bounce_fountainG;
@@ -533,65 +552,63 @@ div #games h2 {
     -moz-animation-delay: 1.64s;
 }
 
-
-
 @keyframes bounce_fountainG {
     0% {
         transform: scale(1);
-        background-color: rgb(0,0,0);
+        background-color: rgb(0, 0, 0);
     }
 
     100% {
         transform: scale(.3);
-        background-color: rgb(255,255,255);
+        background-color: rgb(255, 255, 255);
     }
 }
 
 @-o-keyframes bounce_fountainG {
     0% {
         -o-transform: scale(1);
-        background-color: rgb(0,0,0);
+        background-color: rgb(0, 0, 0);
     }
 
     100% {
         -o-transform: scale(.3);
-        background-color: rgb(255,255,255);
+        background-color: rgb(255, 255, 255);
     }
 }
 
 @-ms-keyframes bounce_fountainG {
     0% {
         -ms-transform: scale(1);
-        background-color: rgb(0,0,0);
+        background-color: rgb(0, 0, 0);
     }
 
     100% {
         -ms-transform: scale(.3);
-        background-color: rgb(255,255,255);
+        background-color: rgb(255, 255, 255);
     }
 }
 
 @-webkit-keyframes bounce_fountainG {
     0% {
         -webkit-transform: scale(1);
-        background-color: rgb(0,0,0);
+        background-color: rgb(0, 0, 0);
     }
 
     100% {
         -webkit-transform: scale(.3);
-        background-color: rgb(255,255,255);
+        background-color: rgb(255, 255, 255);
     }
 }
 
 @-moz-keyframes bounce_fountainG {
     0% {
         -moz-transform: scale(1);
-        background-color: rgb(0,0,0);
+        background-color: rgb(0, 0, 0);
     }
 
     100% {
         -moz-transform: scale(.3);
-        background-color: rgb(255,255,255);
+        background-color: rgb(255, 255, 255);
     }
 }
 
@@ -666,6 +683,25 @@ rect {
 
 .bargraph {
     position: relative;
+}
+
+/* Transition on image in contact. */
+.trans {
+    -webkit-transition: width 2s; /* Safari */
+    transition: width 2s;
+}
+
+.trans:hover {
+    width: 300px;
+}
+
+/* Google maps style. */
+.googleMap {
+    width: 500px;
+    height: 380px;
+    display: inline-block;
+    border: 2px solid;
+    border-radius: 25px;
 }
 
 
