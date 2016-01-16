@@ -12,8 +12,12 @@
         <input type="number" class="form-control" placeholder="Score" min="1" max="100" ng-model="review.score">
     </div>
     <div class="form-group">
-        <label>Game Name:</label>
-        <input type="text" class="form-control" placeholder="Game Name" min="1" max="100" ng-model="review.gameName">
+        <label>Game:</label>
+
+        <select class="form-control" ng-model="review.gameName" ng-required="true">
+            <option ng-repeat="game in games" value="{{game.gameName}}">{{game.gameName}}</option>
+        </select>
+
     </div>
     <button type="submit" class="btn btn-default" data-ng-click="createReview(review)">Create review</button>
 </form>
