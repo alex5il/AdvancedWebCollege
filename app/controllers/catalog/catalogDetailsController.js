@@ -1,14 +1,12 @@
 'use strict';
 
-define(['app', 'services/gamesService', 'services/reviewsService'], function (app) {
+define(['app', 'services/gamesService'], function (app) {
 
-    var catalogDetailsController = function ($scope, gamesService, $routeParams, $rootScope, reviewsService) {
+    var catalogDetailsController = function ($scope, gamesService, $rootScope) {
         // Get game by id (which is name)
         $scope.game = $rootScope.params.game;
-        //$scope.game = gamesService.groupByScore($routeParams.id)
-        console.log(reviewsService.groupByScore($routeParams.id));
     };
 
-    app.register.controller('CatalogDetailsController', ['$scope', 'gamesService', '$routeParams', '$rootScope', 'reviewsService', catalogDetailsController]);
+    app.register.controller('CatalogDetailsController', ['$scope', 'gamesService', '$rootScope', catalogDetailsController]);
 
 });
