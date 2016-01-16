@@ -29,6 +29,7 @@ define(['services/routeResolver'], function () {
             //For example, the controllers for customers live in controllers/customers and the views are in views/customers.
             //The controllers for orders live in controllers/orders and the views are in views/orders
             //The second parameter allows for putting related controllers/views into subfolders to better organize large projects
+                .when('/', route.resolve('Home'))
                 .when('/customers', route.resolve('Customers', 'customers/'))
                 .when('/customerorders/:customerID', route.resolve('CustomerOrders', 'customers/'))
                 .when('/customeredit/:customerID', route.resolve('CustomerEdit', 'customers/'))
@@ -43,7 +44,7 @@ define(['services/routeResolver'], function () {
                 .when('/contact', route.resolve('Contact'))
                 .when('/login', route.resolve('Login'))
                 .when('/register', route.resolve('Register'))
-                .otherwise({redirectTo: '/customers'});
+                .otherwise({redirectTo: '/'});
 
             // use the HTML5 History API
             $locationProvider.html5Mode({
