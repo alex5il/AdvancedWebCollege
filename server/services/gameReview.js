@@ -14,7 +14,7 @@ module.exports = {
     gameReview.score = req_body.score;
     gameReview.reviewDate = req_body.reviewDate;
     gameReview.userId = req_body.userId;
-    gameReview.id = req_body.id;
+    gameReview.id = 1;
 
     gameReview.save(function(err, gameReview) {
       if (err)
