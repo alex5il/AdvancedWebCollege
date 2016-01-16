@@ -5,13 +5,13 @@
             <header>
                 <h2>{{review.title}}</h2>
                 <div class="rating">User rating: <b>{{review.score}}</b> | {{review.gameName}}</div>
-                <div class="by-line">Review date: <time>{{review.reviewDate}}</time></div>
+                <div class="by-line">Review date: <time>{{review.date}}</time></div>
             </header>
 
             <hr />
 
             <div class="content">
-                <p>{{review.content}}</p>
+                <textarea ng-model="review.content" style="width: 400px; height: 100px;"></textarea>
             </div>
         </article>
     </section>
