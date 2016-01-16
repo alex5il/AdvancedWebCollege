@@ -10,19 +10,19 @@
 
             <div class="col-xs-7">
                 <h2 ng-model="catalog.gameName"> </h2>
-                <div><b>Genre:</b> {{catalog.genre}} </div>
+                <div><b>Genre:</b> {{game.catalog.genre}} </div>
 
-                <div><b>Release Date:</b> {{catalog.released}})</div>
+                <div><b>Release Date:</b> {{game.catalog.date}}</div>
 
-                <div><b>Description:</b> {{catalog.gameDesc}} </div>
+                <div><b>Description:</b> {{game.catalog.gameDesc}} </div>
 
-                <div><b>Cost:</b> {{catalog.cost}} </div>
+                <div><b>Cost:</b> {{game.catalog.cost}} </div>
             </div>
         </div>
 
         <div class="row score-badge">
             <div class="col-xs-4 game-score">
-                {{catalog.AverageScore}}
+                {{game.catalog.score}}
             </div>
             <div class="col-xs-4 glyphicon review-icon"></div>
         </div>
@@ -39,6 +39,6 @@
 
     </div>
 
-    <div class="col-xs-offset-2 col-xs-4" id="myPie"></div>
+    <pie-chart-directive></pie-chart-directive>
 
 </div>

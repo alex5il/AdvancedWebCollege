@@ -1,11 +1,12 @@
 'use strict';
 
-define(['app'], function (app) {
+define(['app', 'services/gamesService', '$routeParams'], function (app) {
 
-    var catalogDetailsController = function ($scope) {
-
+    var catalogDetailsController = function ($scope, gamesService, $routeParams) {
+        // Get game by id (which is name)
+        $scope.game = gamesService.getGame($routeParams.id)
     };
 
-    app.register.controller('CatalogDetailsController', ['$scope', catalogDetailsController]);
+    app.register.controller('CatalogDetailsController', ['$scope', 'gamesService', '$routeParams', catalogDetailsController]);
 
 });
