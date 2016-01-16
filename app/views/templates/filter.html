@@ -18,8 +18,19 @@
 
 <form class="form-inline" ng-if="filters.type === 'reviews'">
     <div class="form-group large-margin-right">
-        <label class="small-margin-right">Review name:</label>
-        <input type="text" class="form-control large-input" placeholder="Fallout" ng-model="inputFilters.reviewName">
+        <label class="small-margin-right">Game name:</label>
+        <input type="text" class="form-control large-input" placeholder="Fallout" ng-model="inputFilters.gameName">
     </div>
+
+    <div class="form-group large-margin-right">
+        <label class="small-margin-right">Score above:</label>
+        <input type="number" min="1" max="100" class="form-control small-input" placeholder="Cost" ng-model="inputFilters.title">
+    </div>
+
+    <div class="form-group large-margin-right">
+        <label class="small-margin-right">Score above:</label>
+        <input type="number" min="1" max="100" class="form-control small-input" placeholder="Cost" ng-model="inputFilters.score">
+    </div>
+
     <button type="submit" class="btn btn-primary pull-right" ng-click="filterReviews()">Search</button>
 </form>
