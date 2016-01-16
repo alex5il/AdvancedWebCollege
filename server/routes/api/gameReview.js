@@ -46,6 +46,19 @@ exports.deleteGameReview = function (req, res) {
   });
 };
 
+exports.groupByScore = function (req, res) {
+  console.log('*** groupByScore');
+
+  db.groupByScore(req.params.gameName, function(err,gamesR) {
+    if (err) {
+      console.log('*** groupByScore err');
+      res.json({'status': false});
+    } else {
+      console.log('*** groupByScore ok');
+      res.json(gamesR);
+    }
+  });
+};
 
   exports.byFilters = function (req, res) {
     console.log('*** byFilters');
@@ -60,19 +73,6 @@ exports.deleteGameReview = function (req, res) {
       }
   });
 
-  exports.groupByScore = function (req, res) {
-    console.log('*** groupByScore');
-
-    db.groupByScore(req.params.gameName, function(err,gamesR) {
-      if (err) {
-        console.log('*** byFilters err');
-        res.json({'status': false});
-      } else {
-        console.log('*** byFilters ok');
-        res.json(gamesR);
-      }
-    });
-  };
 };
 
 
