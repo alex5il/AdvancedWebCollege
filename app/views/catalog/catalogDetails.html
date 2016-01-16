@@ -1,44 +1,47 @@
-<div class="row">
-    <div class="col-xs-6">
+<div class="container">
 
-        <div class="row">
-            <div class="col-xs-5">
+    <div class="row">
+        <div class="col-xs-6">
 
-                <img ng-src="catalog.pic" width="150" height="150" />
+            <div class="row">
+                <div class="col-xs-5">
 
+                    <img ng-src="catalog.pic" width="150" height="150" />
+
+                </div>
+
+                <div class="col-xs-7">
+                    <h2 ng-model="catalog.gameName"> </h2>
+                    <div><b>Genre:</b> {{game.catalog.genre}} </div>
+
+                    <div><b>Release Date:</b> {{game.catalog.date}}</div>
+
+                    <div><b>Description:</b> {{game.catalog.gameDesc}} </div>
+
+                    <div><b>Cost:</b> {{game.catalog.cost}} </div>
+                </div>
             </div>
 
-            <div class="col-xs-7">
-                <h2 ng-model="catalog.gameName"> </h2>
-                <div><b>Genre:</b> {{game.catalog.genre}} </div>
-
-                <div><b>Release Date:</b> {{game.catalog.date}}</div>
-
-                <div><b>Description:</b> {{game.catalog.gameDesc}} </div>
-
-                <div><b>Cost:</b> {{game.catalog.cost}} </div>
+            <div class="row score-badge">
+                <div class="col-xs-4 game-score">
+                    {{game.catalog.score}}
+                </div>
+                <div class="col-xs-4 glyphicon review-icon"></div>
             </div>
+
+            <div class="row bottom-links">
+                <div class="col-xs-3">
+                    <button class = "btn btn-primary glyphicon glyphicon-align-justify"> Review! </button>
+                </div>
+
+                <div class="col-xs-3">
+                    <button type="button" class="btn btn-success">Purchase!</button>
+                </div>
+            </div>
+
         </div>
 
-        <div class="row score-badge">
-            <div class="col-xs-4 game-score">
-                {{game.catalog.score}}
-            </div>
-            <div class="col-xs-4 glyphicon review-icon"></div>
-        </div>
-
-        <div class="row bottom-links">
-            <div class="col-xs-3">
-                <button class = "btn btn-primary glyphicon glyphicon-align-justify"> Review! </button>
-            </div>
-
-            <div class="col-xs-3">
-                <button type="button" class="btn btn-success">Purchase!</button>
-            </div>
-        </div>
+        <pie-chart-directive></pie-chart-directive>
 
     </div>
-
-    <pie-chart-directive></pie-chart-directive>
-
 </div>
