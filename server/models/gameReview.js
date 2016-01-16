@@ -25,7 +25,7 @@ var GameReviewSchema = new Schema({
     type : Number, required: true, unique: true
   },
   date : {
-    type : Date
+    type : String
   }
 });
 
