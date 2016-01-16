@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="794a53d3-b006-4826-b09e-9f22b8ba15b9" name="Default" comment="paging server side&#10;">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/directives/pieChartDirective.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/views/templates/pieChart.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/catalog/gameGraph.js" afterPath="$PROJECT_DIR$/app/views/catalog/gameGraph.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/services/homeService.js" afterPath="$PROJECT_DIR$/app/services/homeService.js" />
     </list>
     <ignored path="AdvancedWebCollege.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,16 +24,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="home.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/home.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="25" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/app.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -51,6 +39,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="100" column="0" selection-start-line="100" selection-start-column="0" selection-end-line="100" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="homeService.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/services/homeService.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.36468646">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -88,6 +86,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="webServiceDirective.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/directives/webServiceDirective.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="gameGraph.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/catalog/gameGraph.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -98,10 +106,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pieChartDirective.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pieChartDirective.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/directives/pieChartDirective.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.46296296">
+            <state vertical-scroll-proportion="0.0">
               <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
               <folding />
             </state>
@@ -113,16 +121,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-0.0">
               <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routeResolver.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/services/routeResolver.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="41" column="60" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -195,11 +193,11 @@
         <option value="$PROJECT_DIR$/app/views/templates/resultTable.html" />
         <option value="$PROJECT_DIR$/app/directives/resultTableDirective.js" />
         <option value="$PROJECT_DIR$/app/directives/webServiceDirective.js" />
-        <option value="$PROJECT_DIR$/app/services/homeService.js" />
         <option value="$PROJECT_DIR$/app/app.js" />
         <option value="$PROJECT_DIR$/server/services/game.js" />
         <option value="$PROJECT_DIR$/app/views/catalog/gameGraph.js" />
         <option value="$PROJECT_DIR$/app/directives/pieChartDirective.js" />
+        <option value="$PROJECT_DIR$/app/services/homeService.js" />
       </list>
     </option>
   </component>
@@ -662,16 +660,22 @@
       <option name="project" value="LOCAL" />
       <updated>1452957129899</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="paging server side&#10;">
+      <created>1452959854882</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1452959854882</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18020834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18020834" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2114165" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -963,7 +967,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
           <folding>
-            <marker date="1452951224744" expanded="true" signature="77:89" placeholder="[...]" />
+            <marker date="1452959919310" expanded="true" signature="77:89" placeholder="[...]" />
           </folding>
         </state>
       </provider>
@@ -976,26 +980,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/directives/webServiceDirective.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/services/gamesService.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="56" column="59" selection-start-line="56" selection-start-column="59" selection-end-line="56" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/services/homeService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1092,8 +1080,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/directives/pieChartDirective.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46296296">
+        <state vertical-scroll-proportion="0.0">
           <caret line="25" column="42" selection-start-line="25" selection-start-column="42" selection-end-line="25" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/directives/webServiceDirective.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/services/homeService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36468646">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>

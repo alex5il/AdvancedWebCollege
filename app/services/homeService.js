@@ -20,7 +20,7 @@ define(['app'], function (app) {
         }
 
         homeFactory.getPage = function (pageIndex) {
-            var url = "http://www.giantbomb.com/api/games/?api_key=e31a53182866e975585bd1891e5716df2864eebf&field_list=description,name&limit=1&sort=number_of_user_reviews:desc&platforms=94&filter=description:null&format=jsonp&offset=1&json_callback=display";
+            var url = "http://www.giantbomb.com/api/games/?api_key=e31a53182866e975585bd1891e5716df2864eebf&field_list=description,name&limit=1&sort=number_of_user_reviews:desc&platforms=94&filter=description:null&format=jsonp&offset=1&json_callback=JSON_CALLBACK";
             //var url = 'https://angularjs.org/greet.php?callback=JSON_CALLBACK&name=Super%20Hero';
             $http.jsonp(url).
             success(function(data, status, headers, config) {
