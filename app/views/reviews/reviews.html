@@ -1,16 +1,19 @@
-<div class="reviews view indent">
+<div class="customers view indent">
     <div class="container">
         <header>
-            <h3>Game Reviews</h3>
+            <h3>Reviews</h3>
         </header>
 
-        <review-create-directive></review-create-directive>
+        <!--Catalog table-->
+        <game-create-directive></game-create-directive>
+
+        <hr>
 
         <!--Filter template here-->
-        <reviews-filter-directive filters="reviewsFilters"></reviews-filter-directive>
+        <filter-directive filters="filters"></filter-directive>
 
         <!--Catalog table-->
-        <reviews-table-directive result="reviews"></reviews-table-directive>
+        <result-table-directive result="filters"></result-table-directive>
 
     </div>
 </div>
