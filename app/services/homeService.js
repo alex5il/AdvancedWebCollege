@@ -2,7 +2,7 @@
 
 define(['app'], function (app) {
 
-    var gamesService = function ($http, $q) {
+    var homeService = function ($http, $q) {
         var serviceBase = 'http://www.giantbomb.com/api/games/?api_key=e31a53182866e975585bd1891e5716df2864eebf&field_list=description,name&limit=1&sort=number_of_user_reviews:desc&platforms=94&filter=description:null',
             homeFactory = {};
 
@@ -20,5 +20,4 @@ define(['app'], function (app) {
     };
 
     app.factory('homeService', ['$http', '$q', homeService]);
-
 });

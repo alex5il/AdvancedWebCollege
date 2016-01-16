@@ -2,7 +2,7 @@
 
 define(['app', 'services/homeService'], function (app) {
 
-    var filterDirective = function (homeService) {
+    var webServiceDirective = function (homeService) {
         return {
             restrict: 'E',
             templateUrl: "/app/views/templates/webService.html",
@@ -11,7 +11,7 @@ define(['app', 'services/homeService'], function (app) {
                 scope.getData = function (pageIndex) {
                     //scope.results = homeService.getPage(pageIndex);
                     console.log(pageIndex);
-                }
+                };
                 scope.getData(1);
             }
         }
