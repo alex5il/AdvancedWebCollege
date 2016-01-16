@@ -2,7 +2,7 @@
 
 define(['app', 'services/customersService', 'services/gamesService'], function (app) {
 
-    var resultTableDirective = function (customersService, gamesService) {
+    var resultTableDirective = function (customersService, gamesService, $location) {
         return {
             restrict: 'E',
             templateUrl: "/app/views/templates/resultTable.html",
@@ -13,6 +13,10 @@ define(['app', 'services/customersService', 'services/gamesService'], function (
             controller: function ($scope) {
                 $scope.result = {};
                 $scope.result.tuples = [];
+
+                $scope.go = function ( path ) {
+                    $location.path( path );
+                };
 
                 switch($scope.filters.type) {
                     case 'catalog':
@@ -32,5 +36,5 @@ define(['app', 'services/customersService', 'services/gamesService'], function (
         }
     };
 
-    app.directive('resultTableDirective', ['customersService', 'gamesService', resultTableDirective]);
+    app.directive('resultTableDirective', ['customersService', 'gamesService', '$location', resultTableDirective]);
 });

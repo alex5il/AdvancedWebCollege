@@ -4,7 +4,7 @@
             <th ng-repeat="tuple in result.tuples">{{tuple.header}}</th>
         </thead>
         <tbody>
-            <tr ng-repeat="item in filters.result.slice(((page.pageNumber-1)*page.itemsPerPage), ((page.pageNumber)*page.itemsPerPage))" ng-if="filters.type === 'catalog'">
+            <tr class="tr-clickable" ng-click="go('/catalog/' + item[result.tuples[1].value])" ng-repeat="item in filters.result.slice(((page.pageNumber-1)*page.itemsPerPage), ((page.pageNumber)*page.itemsPerPage))" ng-if="filters.type === 'catalog'">
                 <td>{{item[result.tuples[0].value]}}</td>
                 <td>{{item[result.tuples[1].value]}}</td>
                 <td>{{item[result.tuples[2].value]}}</td>
