@@ -18,12 +18,14 @@ define(['app'], function (app) {
             });
         };
 
-        gamesFactory.filteredIndex = function (game) {
+        gamesFactory.filteredIndex = function (game,page) {
             return $http.get(serviceBase + 'byFilters/', {
                 params: {
                     gameName: game.gameName,
                     genre: game.genre,
-                    score: game.score
+                    score: game.score,
+                    pageNumber: page.pageNumber,
+                    itemsPerPage: page.itemsPerPage
                 }
             }).then(function (results) {
                 game.id = results.data.id;
