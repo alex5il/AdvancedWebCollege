@@ -17,6 +17,7 @@ require(
         'directives/reviewsFilterDirective',
         'directives/webServiceDirective',
         'directives/pieChartDirective',
+        'directives/mapDirective',
         'services/routeResolver',
         'services/config',
         'services/customersService',
