@@ -57,7 +57,7 @@ module.exports = {
 
   groupByScore: function(gameName, callback){
     console.log('*** accessDB.groupByScore');
-    db.gamereviews.aggregate([{$match:{gameName:gameName}},{"$group" : {_id :"$score", count:{$sum:1}}}],function(err, gameReview) {
+    GameReview.aggregate([{$match:{gameName:gameName}},{"$group" : {_id :"$score", count:{$sum:1}}}],function(err, gameReview) {
       callback(null, gameReview);
     });
   },
