@@ -7,7 +7,8 @@ define(['app', 'services/customersService', 'services/gamesService'], function (
             restrict: 'E',
             templateUrl: "/app/views/templates/resultTable.html",
             scope: {
-                filters : "="
+                filters : "=",
+                page: "="
             },
             controller: function ($scope) {
                 $scope.result = {};
@@ -26,13 +27,6 @@ define(['app', 'services/customersService', 'services/gamesService'], function (
                         break;
                 }
 
-                $scope.pageChanged = function() {
-                    console.log('Page changed to: ' + $scope.currentPage);
-                };
-
-                $scope.itemsPerPage = 3;
-                $scope.totalItems = 64;
-                $scope.currentPage = 1;
                 $scope.maxSize = 5;
             }
         }

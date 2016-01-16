@@ -4,7 +4,7 @@
             <th ng-repeat="tuple in result.tuples">{{tuple.header}}</th>
         </thead>
         <tbody>
-            <tr ng-repeat="item in filters.result.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))" ng-if="filters.type === 'catalog'">
+            <tr ng-repeat="item in filters.result" ng-if="filters.type === 'catalog'">
                 <td>{{item[result.tuples[0].value]}}</td>
                 <td>{{item[result.tuples[1].value]}}</td>
                 <td>{{item[result.tuples[2].value]}}</td>
@@ -12,7 +12,7 @@
                 <td>{{item[result.tuples[4].value]}}</td>
                 <td>{{item[result.tuples[5].value]}}</td>
             </tr>
-            <tr ng-repeat="item in filters.result.slice(((currentPage-1)*itemsPerPage), ((currentPage)*itemsPerPage))" ng-if="filters.type === 'reviews'">
+            <tr ng-repeat="item in filters.result" ng-if="filters.type === 'reviews'">
                 <td>{{item[result.tuples[0].value]}}</td>
                 <td>{{item[result.tuples[1].value]}}</td>
             </tr>
@@ -21,6 +21,6 @@
 </div>
 
 <div>
-    <uib-pagination ng-change="pageChanged()" total-items="items.length" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" items-per-page="itemsPerPage"></uib-pagination>
+    <uib-pagination ng-change="pageChanged()" total-items="filters.result.length" ng-model="page.pageNumber" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" items-per-page="page.itemsPerPage"></uib-pagination>
 </div>
 
