@@ -22,6 +22,7 @@ require(
         'services/csrfService',
         'services/authService',
         'services/reviewsService',
+        'services/homeService',
         'filters/nameCityStateFilter',
         'filters/nameProductFilter',
         'controllers/orders/orderChildController'

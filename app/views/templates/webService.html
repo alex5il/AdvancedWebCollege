@@ -1,3 +1,11 @@
+<div>
+    <uib-pagination ng-change="getData(currentPage)" total-items="items.length" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" items-per-page="itemsPerPage"></uib-pagination>
+</div>
+
+<h2>Title</h2>
+<h3>{{name}}</h3>
+{{description}}
+
 <div id="games">
     @* Loading Spinner *@
     <div id="fountainG">
@@ -11,7 +19,3 @@
         <div id="fountainG_8" class="fountainG"></div>
     </div>
 </div>
-
-<script>
-    var offset = '@(ViewBag.page - 1)' || 0;
-</script>
