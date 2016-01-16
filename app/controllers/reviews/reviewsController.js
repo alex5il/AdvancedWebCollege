@@ -7,7 +7,7 @@ define(['app'], function (app) {
         $scope.filters.result = {};
         $scope.filters.type = "reviews";
 
-        $scope.page = {pageNumber : 1, itemsPerPage: 1};
+        $scope.page = {pageNumber : 1, itemsPerPage: 5};
     };
 
     app.register.controller('ReviewsController', ['$scope', reviewsController]);
