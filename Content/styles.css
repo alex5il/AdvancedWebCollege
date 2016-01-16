@@ -267,7 +267,7 @@ section article.review-post div.content {
 
 #ng-view {
     position: relative;
-    padding-top: 65px;
+    padding-top: 25px;
 }
 
 .view {
