@@ -95,7 +95,7 @@ module.exports = {
     if(params.genre && params.genre !=="")
       myFilter['genre'] = params.genre;
     if(params.cost && params.cost !=="")
-      myFilter['cost'] = params.cost;
+      myFilter['cost'] = { $lt: params.cost };
     if(params.gameName && params.gameName !=="")
       myFilter['gameName'] = params.gameName;
     console.log('*** accessDB.getGamesByFilter');
