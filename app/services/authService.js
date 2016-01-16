@@ -2,7 +2,11 @@
 
 define(['app'], function (app) {
 
-    var authService = function ($http, $q, $window) {
+    var authService = function ($http, $q, $window, $location, $rootScope) {
+        this.data = {
+            "somedata": 0
+        };
+
         var serviceBase = '/api/',
             authFactory = {};
 
@@ -21,11 +25,14 @@ define(['app'], function (app) {
                 .success(function (data, status) {
                     if(status === 200 && data){
                         $window.sessionStorage.setItem('user-email', JSON.stringify(user.email));
+                        $location.path("/");
+                        $rootScope.session.user = user.email;
                         user = true;
                         deferred.resolve();
                     } else {
                         $window.sessionStorage.removeItem('user-email');
                         user = false;
+                        $rootScope.session.user = undefined;
                         deferred.reject();
                     }
                 })
@@ -49,12 +56,15 @@ define(['app'], function (app) {
 
         authFactory.logOut = function () {
             // create a new instance of deferred
+            console.log("asdasd");
             var deferred = $q.defer();
 
             // send a get request to the server
             $http.get(serviceBase + 'logout')
                 // handle success
                 .success(function (data) {
+                    $window.sessionStorage.removeItem('user-email');
+                    $rootScope.session.user = undefined;
                     user = false;
                     deferred.resolve();
                 })
@@ -82,6 +92,9 @@ define(['app'], function (app) {
                 // handle success
                 .success(function (data, status) {
                     if(status === 200 && data){
+                        $window.sessionStorage.setItem('user-email', JSON.stringify(user.email));
+                        $location.path("/");
+                        $rootScope.session.user = user.email;
                         deferred.resolve();
                     } else {
                         deferred.reject();
@@ -100,5 +113,5 @@ define(['app'], function (app) {
         return authFactory;
     };
 
-    app.factory('authService', ['$http', '$q', '$window',  authService]);
+    app.factory('authService', ['$http', '$q', '$window','$location', '$rootScope',  authService]);
 });

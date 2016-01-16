@@ -55,6 +55,13 @@ define(['services/routeResolver'], function () {
             });
         }]);
 
+    app.run(function ($window, $rootScope, authService) { //use run rather than config
+        $rootScope.session = {};
+        $rootScope.session.user = $window.sessionStorage.getItem('user-email');
+
+        $rootScope.logOut = authService.logOut();
+    });
+
     //Only needed for Breeze. Maps Q (used by default in Breeze) to Angular's $q to avoid having to call scope.$apply() 
     //app.run(['$q', '$rootScope',
     //    function ($q, $rootScope) {

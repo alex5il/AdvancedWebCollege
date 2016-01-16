@@ -54,9 +54,15 @@
 
                         <li><a href="/about">About</a></li>
                         <li><a href="/contact">Contact</a></li>
-                        <li><a href="/login">Login</a></li>
-                        <li><a href="/register">Register</a></li>
+                        <li ng-if="!$root.session || !$root.session.user"><a href="/login">Login</a></li>
+                        <li ng-if="!$root.session || !$root.session.user"><a href="/register">Register</a></li>
 
+                        <li ng-if="$root.session && $root.session.user">
+                            <a href="#">
+                                <span class="glyphicon glyphicon-user"></span> 
+                                <strong>Welcome {{$root.session.user}}</strong>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -106,6 +112,8 @@
             </a>
         </section>
     </header>
+
+    {{$root.session}}
 
     <div ng-view="" id="ng-view" class="slide-animation"></div>
 
