@@ -101,7 +101,7 @@ module.exports = {
     console.log('*** accessDB.getGamesByFilter');
     console.log(params.itemsPerPage);
     console.log(params.pageNumber);
-    Game.find(myFilter, { skip: params.itemsPerPage * params.pageNumber, limit: params.itemsPerPage } ,function(err, games) {
+    Game.find(myFilter,function(err, games) {
       callback(null, games);
 
     });
