@@ -1,6 +1,6 @@
 'use strict';
 
-define(['app', 'services/gamesService', '$routeParams'], function (app) {
+define(['app', 'services/gamesService'], function (app) {
 
     var catalogDetailsController = function ($scope, gamesService, $routeParams) {
         // Get game by id (which is name)

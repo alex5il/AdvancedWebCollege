@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="794a53d3-b006-4826-b09e-9f22b8ba15b9" name="Default" comment="Merge branch 'master' of https://github.com/alex5il/AdvancedWebCollege&#10;&#10;# Conflicts:&#10;#&#9;Scripts/main.js&#10;">
+    <list default="true" id="794a53d3-b006-4826-b09e-9f22b8ba15b9" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Content/styles.css" afterPath="$PROJECT_DIR$/Content/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/templates/googleMap.html" afterPath="$PROJECT_DIR$/app/views/templates/googleMap.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/catalog/catalogDetailsController.js" afterPath="$PROJECT_DIR$/app/controllers/catalog/catalogDetailsController.js" />
     </list>
     <ignored path="AdvancedWebCollege.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -68,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="catalogDetails.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="catalogDetails.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/catalog/catalogDetails.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6189857">
-              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state vertical-scroll-proportion="-9.807693">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -98,11 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="catalogDetailsController.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="catalogDetailsController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/catalog/catalogDetailsController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.17106918">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -188,8 +187,8 @@
         <option value="$PROJECT_DIR$/app/directives/pieChartDirective.js" />
         <option value="$PROJECT_DIR$/app/views/catalog/catalog.html" />
         <option value="$PROJECT_DIR$/app/app.js" />
-        <option value="$PROJECT_DIR$/app/controllers/catalog/catalogDetailsController.js" />
         <option value="$PROJECT_DIR$/app/views/catalog/catalogDetails.html" />
+        <option value="$PROJECT_DIR$/app/controllers/catalog/catalogDetailsController.js" />
       </list>
     </option>
   </component>
@@ -714,7 +713,13 @@
       <option name="project" value="LOCAL" />
       <updated>1452962181697</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Merge branch 'master' of https://github.com/alex5il/AdvancedWebCollege&#10;&#10;# Conflicts:&#10;#&#9;Scripts/main.js&#10;">
+      <created>1452962242811</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1452962242811</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -727,7 +732,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2114165" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13002114" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13002114" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32921347" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1136,18 +1141,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/catalog/catalogDetailsController.js">
+    <entry file="file://$PROJECT_DIR$/app/views/catalog/catalogDetails.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="15" selection-start-line="6" selection-start-column="15" selection-end-line="6" selection-end-column="19" />
+        <state vertical-scroll-proportion="-9.807693">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/catalog/catalogDetails.html">
+    <entry file="file://$PROJECT_DIR$/app/controllers/catalog/catalogDetailsController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6189857">
-          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.17106918">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
