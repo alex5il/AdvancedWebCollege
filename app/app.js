@@ -37,6 +37,7 @@ define(['services/routeResolver'], function () {
                 .when('/catalog', route.resolve('Catalog', 'catalog/'))
                 .when('/catalog/:id', route.resolve('CatalogDetails', 'catalog/'))
                 .when('/reviews', route.resolve('Reviews', 'reviews/'))
+                .when('/reviews/:id', route.resolve('ReviewDetails', 'reviews/'))
                 .when('/genres', route.resolve('Genres', 'genres/'))
                 .when('/orders', route.resolve('Orders', 'orders/'))
                 .when('/cart', route.resolve('OrderCart', 'orders/'))
