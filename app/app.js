@@ -3,7 +3,7 @@
 define(['services/routeResolver'], function () {
 
     var app = angular.module('customersApp',
-        ['ngRoute', 'ngAnimate', 'routeResolverServices', 'wc.Directives', 'wc.Animations', 'ui.bootstrap']);
+        ['ngRoute', 'ngAnimate', 'routeResolverServices', 'wc.Directives','ng-fusioncharts', 'wc.Animations', 'ui.bootstrap']);
 
     app.config(['$routeProvider', 'routeResolverProvider', '$controllerProvider', '$compileProvider', '$filterProvider', '$provide', '$httpProvider', '$locationProvider',
         function ($routeProvider, routeResolverProvider, $controllerProvider, $compileProvider, $filterProvider, $provide, $httpProvider, $locationProvider) {
