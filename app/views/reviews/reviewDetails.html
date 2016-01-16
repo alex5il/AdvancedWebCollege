@@ -1,5 +1,23 @@
 <div class="container">
 
-    dsadasd
+    <section>
+        <article class="review-post">
+            <header>
+                <h2>{{review.title}}</h2>
+                <div class="rating">User rating: <b>{{review.score}}</b> | {{review.gameName}}</div>
+                <div class="by-line">Review date: <time>{{review.reviewDate}}</time></div>
+            </header>
+
+            <hr />
+
+            <div class="content">
+                <p>{{review.content}}</p>
+            </div>
+        </article>
+    </section>
+
+    <p>
+        <a href="/reviews">Back to List</a>
+    </p>
 
 </div>

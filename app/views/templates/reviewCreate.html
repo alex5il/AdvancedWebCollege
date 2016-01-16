@@ -1,11 +1,11 @@
-<form>
+<form id="frm">
     <div class="form-group">
         <label>Game Title: Fushoo</label>
         <input type="text" class="form-control" placeholder="Title" ng-model="review.title">
     </div>
     <div class="form-group">
         <label>Review:</label>
-        <textarea type="text" class="form-control" placeholder="Your review" ng-model="review.content"></textarea>
+        <textarea form="frm" type="text" class="form-control" placeholder="Your review" ng-model="review.content"></textarea>
     </div>
     <div class="form-group">
         <label>Score:</label>

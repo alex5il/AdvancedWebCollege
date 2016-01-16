@@ -16,7 +16,17 @@ define(['app', 'services/customersService', 'services/gamesService'], function (
 
                 $scope.go = function ( path, item) {
                     $location.path( path );
-                    $rootScope.params = {game : item}
+
+                    switch($scope.filters.type) {
+                        case 'catalog':
+                            $rootScope.params = {game : item}
+                            break;
+                        case 'reviews':
+                            $rootScope.params = {review : item}
+                            break;
+                    }
+
+
                 };
 
                 switch($scope.filters.type) {
@@ -25,10 +35,10 @@ define(['app', 'services/customersService', 'services/gamesService'], function (
                             {header:'#', value: 'id'}, {header:'name', value: 'gameName'}, {header:'description', value: 'gameDesc'},
                             {header:'genre', value: 'genre'},{header:'cost', value: 'cost'}, {header:'score', value: 'score'}];
                         break;
-                    case 'reviews': // TODO reviews
+                    case 'reviews':
                         $scope.result.tuples = [
                             {header:'#', value: 'id'}, {header:'Game', value:'gameName'} , {header:'Title', value: 'title'}, {header:'Score', value: 'score'},
-                            {header:'Date', value: 'reviewDate'}];
+                            {header:'Date', value: 'date'}];
                         break;
                 }
 

@@ -2,11 +2,12 @@
 
 define(['app'], function (app) {
 
-    var reviewDetailsController = function ($scope) {
+    var reviewDetailsController = function ($scope, reviewsService, $routeParams, $rootScope) {
         // Get game by id (which is name)
-        //$scope.game = gamesService.getGame($routeParams.id)
+        console.log($rootScope.params.review);
+        $scope.review = $rootScope.params.review;
     };
 
-    app.register.controller('ReviewDetailsController', ['$scope', reviewDetailsController]);
+    app.register.controller('ReviewDetailsController', ['$scope', 'reviewsService', '$routeParams', '$rootScope', reviewDetailsController]);
 
 });

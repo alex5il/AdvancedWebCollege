@@ -33,6 +33,13 @@ define (['app'], function (app){
         };
 
         reviewsFactory.insertReview = function (review) {
+            var d = new Date();
+
+            var year = d.getFullYear();
+            var month = d.getMonth() + 1;
+            var day = d.getDay();
+
+            review.date = day + '/' + month + '/' + year;
             return $http.post(serviceBase + 'PostGameReview', review).then(function (results){
                 review.id = results.data.id;
                 return results.data;
