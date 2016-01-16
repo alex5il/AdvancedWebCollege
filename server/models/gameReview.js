@@ -23,6 +23,9 @@ var GameReviewSchema = new Schema({
   },
   id : {
     type : Number, required: true, unique: true
+  },
+  date : {
+    type : Date
   }
 });
 

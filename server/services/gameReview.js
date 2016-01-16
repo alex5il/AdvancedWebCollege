@@ -13,6 +13,7 @@ module.exports = {
     gameReview.title = req_body.title;
     gameReview.score = req_body.score;
     gameReview.content = req_body.content;
+    gameReview.date = req_body.date;
     gameReview.userId = req_body.userId;
     gameReview.id = 1;
 
@@ -33,7 +34,7 @@ module.exports = {
       gameReview.gameName = req_body.gameName || game.gameName;
       gameReview.title = req_body.gameDec || game.gameDec;
       gameReview.score = req_body.pic || game.pic;
-      gameReview.content = req_body.cost || game.content;
+      gameReview.content = req_body.content || game.content;
       gameReview.score = req_body.score || game.score;
       gameReview.userId = req_body.date || game.date;
       gameReview.id = req_body.genre || game.genre;
