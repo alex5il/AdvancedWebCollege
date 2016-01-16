@@ -18,11 +18,13 @@ define (['app'], function (app){
             });
         };
 
-        reviewsFactory.filteredIndex = function (review) {
+        reviewsFactory.filteredIndex = function (review, page) {
             return $http.get(serviceBase + 'byFilters/', {
                 params: {
                     gameName: review.gameName,
-                    score: review.score
+                    score: review.score,
+                    pageNumber: page.pageNumber,
+                    itemsPerPage: page.itemsPerPage
                 }
             }).then(function (results) {
                 review.id = results.data.id;

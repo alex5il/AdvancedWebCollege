@@ -2,6 +2,7 @@
 var mongoose = require('mongoose')
   , CustomerService = require('./services/customer')
   , GameService = require('./services/game')
+  , GameReviewService = require('./services/gameReview')
   , State = require('./models/state')
   , User = require('./models/user')
   , util = require('util');
@@ -24,6 +25,11 @@ module.exports = {
   closeDB: function() {
     mongoose.disconnect();
   },
+
+  insertReview : GameReviewService.insertReview,
+  editReview : GameReviewService.editReview,
+  deleteGameReview : GameReviewService.deleteGameReview,
+  getGamesReviewByFilter : GameReviewService.getGamesReviewByFilter,
 
   getGames : GameService.getGames,
   getGame : GameService.getGame,
