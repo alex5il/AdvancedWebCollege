@@ -6,25 +6,25 @@
             <div class="row">
                 <div class="col-xs-5">
 
-                    <img ng-src="catalog.pic" width="150" height="150" />
+                    <img ng-src="game.pic" width="150" height="150" />
 
                 </div>
 
                 <div class="col-xs-7">
-                    <h2 ng-model="catalog.gameName"> </h2>
-                    <div><b>Genre:</b> {{game.catalog.genre}} </div>
+                    <h2>{{game.gameName}}</h2>
+                    <div><b>Genre:</b> {{game.genre}} </div>
 
-                    <div><b>Release Date:</b> {{game.catalog.date}}</div>
+                    <div><b>Release Date:</b> {{game.date}}</div>
 
-                    <div><b>Description:</b> {{game.catalog.gameDesc}} </div>
+                    <div><b>Description:</b> {{game.gameDesc}} </div>
 
-                    <div><b>Cost:</b> {{game.catalog.cost}} </div>
+                    <div><b>Cost:</b> {{game.cost}} </div>
                 </div>
             </div>
 
             <div class="row score-badge">
                 <div class="col-xs-4 game-score">
-                    {{game.catalog.score}}
+                    {{game.score}}
                 </div>
                 <div class="col-xs-4 glyphicon review-icon"></div>
             </div>
