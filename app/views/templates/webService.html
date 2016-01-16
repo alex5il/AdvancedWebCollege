@@ -1,17 +1,26 @@
 <div>
-    <uib-pagination ng-change="getData(currentPage)" total-items="items.length" ng-model="currentPage" max-size="maxSize" class="pagination-sm" boundary-links="true" rotate="false" items-per-page="itemsPerPage"></uib-pagination>
+    <uib-pagination
+            ng-change="getData(currentPage)"
+            total-items="10"
+            ng-model="currentPage"
+            max-size="10"
+            class="pagination-sm"
+            boundary-links="true"
+            rotate="false"
+            items-per-page="1">
+    </uib-pagination>
 </div>
 
 <div id="games">
     <!--@* Loading Spinner *@-->
-    <div id="fountainG">
-        <div id="fountainG_1" class="fountainG"></div>
-        <div id="fountainG_2" class="fountainG"></div>
-        <div id="fountainG_3" class="fountainG"></div>
-        <div id="fountainG_4" class="fountainG"></div>
-        <div id="fountainG_5" class="fountainG"></div>
-        <div id="fountainG_6" class="fountainG"></div>
-        <div id="fountainG_7" class="fountainG"></div>
-        <div id="fountainG_8" class="fountainG"></div>
-    </div>
+    <!--<div id="fountainG">-->
+        <!--<div id="fountainG_1" class="fountainG"></div>-->
+        <!--<div id="fountainG_2" class="fountainG"></div>-->
+        <!--<div id="fountainG_3" class="fountainG"></div>-->
+        <!--<div id="fountainG_4" class="fountainG"></div>-->
+        <!--<div id="fountainG_5" class="fountainG"></div>-->
+        <!--<div id="fountainG_6" class="fountainG"></div>-->
+        <!--<div id="fountainG_7" class="fountainG"></div>-->
+        <!--<div id="fountainG_8" class="fountainG"></div>-->
+    <!--</div>-->
 </div>

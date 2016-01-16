@@ -29,9 +29,9 @@ define(['app'], function (app) {
             }).then(function successCallback(response) {
                 // this callback will be called asynchronously
                 // when the response is available
-                $('#fountainG').toggle();
+                //$('#fountainG').toggle();
                 $.each(response.data.results, function (i, result) {
-                    $('#games').append('<h2>Title</h2><h3>' + result.name + '</h3>' + result.description);
+                    $('#games').html('<h2>Title</h2><h3>' + result.name + '</h3>' + result.description);
                 });
 
             }, function errorCallback(response) {
