@@ -26,7 +26,7 @@ define(['app', 'services/customersService', 'services/gamesService'], function (
                         break;
                     case 'reviews': // TODO reviews
                         $scope.result.tuples = [
-                            {header:'#', value: 'id'}, {header:'Game', value:'gameId'} , {header:'Title', value: 'title'}, {header:'Score', value: 'score'},
+                            {header:'#', value: 'id'}, {header:'Game', value:'gameName'} , {header:'Title', value: 'title'}, {header:'Score', value: 'score'},
                             {header:'Date', value: 'reviewDate'}];
                         break;
                 }
