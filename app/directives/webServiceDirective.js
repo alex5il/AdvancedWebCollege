@@ -10,8 +10,9 @@ define(['app', 'services/homeService'], function (app) {
             link: function (scope, element, attrs) {
                 scope.getData = function (pageIndex) {
                     //scope.results = homeService.getPage(pageIndex);
-                    console.log(pageIndex);
+                    console.log('Page: ' + pageIndex);
                 };
+                console.log('Page: ' + pageIndex);
                 scope.getData(1);
             }
         }
