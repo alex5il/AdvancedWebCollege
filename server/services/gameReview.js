@@ -63,7 +63,7 @@ module.exports = {
       myFilter['score'] = params.score;
     console.log('*** accessDB.getGamesByFilter');
     GameReview.find(myFilter,function(err, gameReview) {
-      callback(null, games);
+      callback(null, gameReview);
 
     });
   }

@@ -18,7 +18,7 @@ define(['app'], function (app) {
             });
         };
 
-        gamesFactory.filteredIndex = function (game,page) {
+        gamesFactory.filteredIndex = function (game, page) {
             return $http.get(serviceBase + 'byFilters/', {
                 params: {
                     gameName: game.gameName,

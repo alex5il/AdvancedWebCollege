@@ -19,7 +19,7 @@ define (['app'], function (app){
         };
 
         reviewsFactory.filteredIndex = function (review, page) {
-            return $http.get(serviceBase + 'byFilters/', {
+            return $http.get(serviceBase + 'reviewByFilters/', {
                 params: {
                     gameName: review.gameName,
                     score: review.score,
@@ -33,14 +33,14 @@ define (['app'], function (app){
         };
 
         reviewsFactory.insertReview = function (review) {
-            return $http.post(serviceBase + 'PostReview', review).then(function (results){
+            return $http.post(serviceBase + 'PostGameReview', review).then(function (results){
                 review.id = results.data.id;
                 return results.data;
             });
         };
 
         reviewsFactory.updateReview = function (review) {
-            return $http.put(serviceBase + 'PutReview/' + game.id, game).then(function (status){
+            return $http.put(serviceBase + 'PostGameReview/' + game.id, game).then(function (status){
                 return status.data;
             });
         };

@@ -41,22 +41,6 @@ module.exports = {
     });
   },
 
-
-  insertReview: function(id,req_body, callback) {
-    console.log('*** accessDB.insertReview');
-
-    Game.findOne({'id': id}, {'_id': 0, 'gameName':0, 'gameDec':0,'game':0,'pic':0, 'date': 0, 'score': 0, 'cost': 0, 'id': 0, 'genre': 0}, function(err, game) {
-      if (err) { return callback(err); }
-
-      game.gameReviews = game.gameReviews.push(req_body.gameReviews)
-      game.save(function(err, game) {
-        if (err)
-        {console.log('*** new review save err: ' + err); return callback(err); }
-        callback(null, game.id);
-      });
-    });
-  },
-
   // insert a game
   editGame: function(id, req_body, callback) {
     console.log('*** accessDB.editGame');
