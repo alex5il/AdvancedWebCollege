@@ -15,8 +15,8 @@ var GameReviewSchema = new Schema({
   score : {
     type : Number, min: 0, max: 100
   },
-  reviewDate : {
-    type : Date
+  content : {
+    type : String
   },
   userId : {
     type : Number
