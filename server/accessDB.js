@@ -30,6 +30,7 @@ module.exports = {
   editReview : GameReviewService.editReview,
   deleteGameReview : GameReviewService.deleteGameReview,
   getGamesReviewByFilter : GameReviewService.getGamesReviewByFilter,
+  groupByScore : GameReviewService.groupByScore,
 
   getGames : GameService.getGames,
   getGame : GameService.getGame,
