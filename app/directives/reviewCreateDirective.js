@@ -2,12 +2,13 @@
 
 define(['app', 'services/gamesService', 'services/reviewsService'], function (app) {
 
-    var reviewCreateDirective = function (gamesService, reviewsService) {
+    var reviewCreateDirective = function (gamesService, reviewsService, $rootScope) {
         return {
             restrict: 'E',
             templateUrl: "/app/views/templates/reviewCreate.html",
             scope: {
-                game: '='
+                game: '=',
+                filters: '='
             },
 
             link: function (scope, element, attrs) {
@@ -34,10 +35,16 @@ define(['app', 'services/gamesService', 'services/reviewsService'], function (ap
 
                 scope.createReview = function (review) {
                     reviewsService.insertReview(review);
+                    if (scope.filters != undefined) {
+                        reviewsService.filteredIndex([]).then(function (res) {
+                            scope.filters.result = res;
+                        });
+                    }
+
                 }
             }
         }
     };
 
-    app.directive('reviewCreateDirective', ['gamesService', 'reviewsService', reviewCreateDirective]);
+    app.directive('reviewCreateDirective', ['gamesService', 'reviewsService', '$rootScope', reviewCreateDirective]);
 });
