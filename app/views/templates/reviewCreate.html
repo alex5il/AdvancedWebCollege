@@ -1,7 +1,10 @@
-<form id="frm">
+<button class = "btn btn-primary glyphicon glyphicon-align-justify" ng-click="showme=true" ng-hide="showme"> Review</button>
+
+<form id="frm" ng-show="showme" style="margin-left: 30px">
+    <h5>Add Review</h5>
     <div class="form-group">
-        <label>Game Title: Fushoo</label>
-        <input type="text" class="form-control" placeholder="Title" ng-model="review.title">
+        <label>Title:</label>
+        <input type="text" class="form-control" placeholder="Review Title" ng-model="review.title">
     </div>
     <div class="form-group">
         <label>Review:</label>
@@ -14,10 +17,11 @@
     <div class="form-group">
         <label>Game:</label>
 
-        <select class="form-control" ng-model="review.gameName" ng-required="true">
+        <select class="form-control" ng-model="review.gameName" ng-disabled="selectDisabled" ng->
             <option ng-repeat="game in games" value="{{game.gameName}}">{{game.gameName}}</option>
         </select>
 
     </div>
     <button type="submit" class="btn btn-default" data-ng-click="createReview(review)">Create review</button>
+    <button class="btn btn-default" ng-click="showme=false">Cancel</button>
 </form>

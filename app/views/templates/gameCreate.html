@@ -1,4 +1,6 @@
-<form enctype="multipart/form-data">
+<button class="btn btn-default" ng-click="showme=true" ng-hide="showme">Add Game</button>
+
+<form enctype="multipart/form-data" ng-show="showme">
     <div class="form-group">
         <label>Game Title:</label>
         <input type="text" class="form-control" placeholder="Title" ng-model="game.gameName">
@@ -20,4 +22,5 @@
         <input type="file" file-model="gameImage">
     </div>
     <button type="submit" class="btn btn-default" ng-click="createGame(game)">Create game</button>
+    <button class="btn btn-default" ng-click="showme=false">Cancel</button>
 </form>
