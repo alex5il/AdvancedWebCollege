@@ -10,6 +10,7 @@ define(['app', 'services/customersService', 'services/gamesService'], function (
                 filters: '='
             },
             link: function (scope, element, attrs) {
+                scope.edit = 'Add';
                 scope.createGame = function (game) {
                     gamesService.insertGame(game);
 

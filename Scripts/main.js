@@ -12,6 +12,7 @@ require(
         'directives/filterDirective',
         'directives/resultTableDirective',
         'directives/gameCreateDirective',
+        'directives/gameEditDirective',
         'directives/reviewCreateDirective',
         'directives/reviewsTableDirective',
         'directives/reviewsFilterDirective',

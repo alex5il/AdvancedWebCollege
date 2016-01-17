@@ -48,6 +48,10 @@ define(['app'], function (app) {
             });
         };
 
+        gamesFactory.insertImage = function (image) {
+
+        }
+
         gamesFactory.updateGame = function (game) {
             return $http.put(serviceBase + 'PutGame/' + game.id, game).then(function (status) {
                 return status.data;

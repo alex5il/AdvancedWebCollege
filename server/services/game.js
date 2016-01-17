@@ -45,7 +45,7 @@ module.exports = {
   editGame: function(id, req_body, callback) {
     console.log('*** accessDB.editGame');
 
-    Game.findOne({'id': id}, {'_id': 0, 'gameName':1, 'gameDec':1,'game':1,'pic':1, 'date': 1, 'score': 1, 'cost': 1, 'id': 1, 'genre': 1}, function(err, game) {
+    Game.findOne({'id': id}, {'_id':1, 'gameName':1, 'gameDec':1,'game':1,'pic':1, 'date': 1, 'score': 1, 'cost': 1, 'id': 1, 'genre': 1}, function(err, game) {
       if (err) { return callback(err); }
 
       game.gameName = req_body.gameName || game.gameName;
