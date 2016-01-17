@@ -18,7 +18,8 @@ define(['app', 'services/customersService', 'services/gamesService'], function (
                     var reader = new FileReader();
                     reader.onloadend  = function(e){
                         var data = e.target.result;
-                        game.image = data;
+                        game.image = String.fromCharCode.apply(null, new Uint16Array(data));;
+
                         gamesService.insertGame(game);
                     };
 
