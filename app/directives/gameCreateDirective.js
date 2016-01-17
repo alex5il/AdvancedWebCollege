@@ -12,7 +12,17 @@ define(['app', 'services/customersService', 'services/gamesService'], function (
             link: function (scope, element, attrs) {
                 scope.edit = 'Add';
                 scope.createGame = function (game) {
-                    gamesService.insertGame(game);
+
+
+                    var file = document.getElementById('file').files[0];
+                    var reader = new FileReader();
+                    reader.onloadend  = function(e){
+                        var data = e.target.result;
+                        game.image = data;
+                        gamesService.insertGame(game);
+                    };
+
+                    reader.readAsArrayBuffer(file);
 
                     if (scope.filters != undefined) {
                         gamesService.filteredIndex([]).then(function (res) {
