@@ -1,6 +1,7 @@
 <button class="btn btn-primary fromAnimation" ng-click="showme=true" ng-hide="showme">{{edit}} Game</button>
 
-<form style="margin-left: 30px" class="fromAnimation" enctype="multipart/form-data" ng-show="showme">
+
+<form style="margin-left: 30px" enctype="multipart/form-data" class="fromAnimation" ng-show="showme">
     <div class="form-group">
         <label>Game Title:</label>
         <input type="text" class="form-control" placeholder="Title" ng-model="game.gameName" ng-disabled="edit === 'Edit'">

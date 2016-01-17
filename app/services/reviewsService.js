@@ -23,6 +23,7 @@ define (['app'], function (app){
                 params: {
                     gameName: review.gameName,
                     score: review.score,
+                    title: review.title,
                     pageNumber: page.pageNumber,
                     itemsPerPage: page.itemsPerPage
                 }
