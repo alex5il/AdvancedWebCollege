@@ -37,7 +37,6 @@ module.exports = {
       gameReview.content = req_body.content || game.content;
       gameReview.score = req_body.score || game.score;
       gameReview.userId = req_body.date || game.date;
-      gameReview.id = req_body.genre || game.genre;
 
       gameReview.save(function(err) {
         if (err) { console.log('*** accessDB.editReview err: ' + err); return callback(err); }
