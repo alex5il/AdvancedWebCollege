@@ -36,7 +36,7 @@ define(['app', 'services/gamesService', 'services/reviewsService'], function (ap
                 scope.createReview = function (review) {
                     reviewsService.insertReview(review);
                     if (scope.filters != undefined) {
-                        reviewsService.filteredIndex([]).then(function (res) {
+                        reviewsService.filteredIndexNoParams([]).then(function (res) {
                             scope.filters.result = res;
                         });
                     }

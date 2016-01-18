@@ -33,6 +33,13 @@ define(['app'], function (app) {
             });
         };
 
+        gamesFactory.filteredIndexNoParams = function (game) {
+            return $http.get(serviceBase + 'byFilters/', {}).then(function (results) {
+                game.id = results.data.id;
+                return results.data;
+            });
+        };
+
         gamesFactory.insertGame = function (game) {
             return $http.post(serviceBase + 'PostGame', game).then(function (results) {
                 game.id = results.data.id;

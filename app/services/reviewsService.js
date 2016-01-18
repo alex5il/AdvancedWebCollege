@@ -33,6 +33,14 @@ define (['app'], function (app){
             });
         };
 
+        reviewsFactory.filteredIndexNoParams = function (review) {
+            return $http.get(serviceBase + 'reviewByFilters/', {}).
+            then(function (results) {
+                review.id = results.data.id;
+                return results.data;
+            });
+        };
+
         reviewsFactory.insertReview = function (review) {
             var d = new Date();
 

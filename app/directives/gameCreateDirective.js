@@ -15,7 +15,7 @@ define(['app', 'services/customersService', 'services/gamesService'], function (
                     gamesService.insertGame(game);
 
                     if (scope.filters != undefined) {
-                        gamesService.filteredIndex([]).then(function (res) {
+                        gamesService.filteredIndexNoParams([]).then(function (res) {
                             scope.filters.result = res;
                         });
                     }
