@@ -13,12 +13,13 @@ var express = require('express'),
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jade');
 app.use(session({
-  secret: 'customermanagerstandard',
-  saveUninitialized: true,
-  resave: true }));
+    secret: 'customermanagerstandard',
+    saveUninitialized: true,
+    resave: true
+}));
 
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/../'));
 app.use(errorhandler());
@@ -30,9 +31,9 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
-app.use(function(req, res, next) {
-  res.cookie('XSRF-TOKEN', req.csrfToken());
-  next();
+app.use(function (req, res, next) {
+    res.cookie('XSRF-TOKEN', req.csrfToken());
+    next();
 });
 
 // ===== Connection string for DB =====
@@ -47,6 +48,13 @@ require('./config/passport')(passport); // pass passport for configuration
 
 // Start server
 
-app.listen(3000, function(){
-  console.log("CustMgr Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+var io = require('socket.io').listen(app.listen(3000, function () {
+    console.log("CustMgr Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+}));
+
+io.sockets.on('connection', function (socket) {
+    socket.on('gameCreated', function (data) {
+        console.log('A new game has been created.');
+        io.sockets.emit('newGame', data);
+    });
 });

@@ -14,6 +14,11 @@ define(['app', 'services/customersService', 'services/gamesService'], function (
                 scope.createGame = function (game) {
                     gamesService.insertGame(game);
 
+                    socket.emit('gameCreated', {
+                        message: 'A new game has been created: ',
+                        name: game.gameName
+                    });
+
                     if (scope.filters != undefined) {
                         gamesService.filteredIndexNoParams([]).then(function (res) {
                             scope.filters.result = res;
