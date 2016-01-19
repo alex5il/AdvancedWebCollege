@@ -40,7 +40,7 @@ module.exports = {
             gameReview.title = req_body.title || gameReview.title;
             gameReview.content = req_body.content || gameReview.content;
             gameReview.score = req_body.score || gameReview.score;
-            gameReview.userId = req_body.date || gameReview.date;
+            gameReview.date = req_body.date || gameReview.date;
 
             gameReview.save(function (err) {
                 if (err) {
