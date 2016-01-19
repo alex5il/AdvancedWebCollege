@@ -3,9 +3,9 @@
  */
 'use strict';
 
-define(['app', 'services/reviewsService', 'services/gamesService'], function (app) {
+define(['app', 'services/reviewsService', 'services/gamesService', 'services/authService'], function (app) {
 
-    var reviewEditDirective = function (reviewsService, gamesService, $rootScope) {
+    var reviewEditDirective = function (reviewsService, gamesService, authService, $rootScope) {
         return {
             restrict: 'E',
             templateUrl: "/app/views/templates/reviewCreate.html",
@@ -26,9 +26,11 @@ define(['app', 'services/reviewsService', 'services/gamesService'], function (ap
                     reviewsService.updateReview(review);
                     scope.realreview = review;
                 }
+
+                scope.isLoggedIn = authService.isLoggedIn();
             }
         }
     };
 
-    app.directive('reviewEditDirective', ['reviewsService', 'gamesService', '$rootScope',reviewEditDirective]);
+    app.directive('reviewEditDirective', ['reviewsService', 'gamesService', 'authService', '$rootScope', reviewEditDirective]);
 });
