@@ -59,7 +59,7 @@ define(['services/routeResolver'], function () {
         $rootScope.session = {};
         $rootScope.session.user = $window.sessionStorage.getItem('user-email');
 
-        $rootScope.logOut = authService.logOut();
+        $rootScope.logOut = authService.logOut;
     });
 
     //Only needed for Breeze. Maps Q (used by default in Breeze) to Angular's $q to avoid having to call scope.$apply() 
