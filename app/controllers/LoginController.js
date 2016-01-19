@@ -5,9 +5,9 @@ define(['app', 'services/csrfService', 'services/authService'], function (app) {
     var loginController = function ($scope, csrfService, authService) {
         $scope.loginAction = function(user) {
             authService.login(user).then(function(){
-                console.log('Good');
+                $scope.showLoginError = false;
             }).catch(function(){
-                console.log('Bad');
+                $scope.showLoginError = true;
             });
         };
 

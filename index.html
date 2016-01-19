@@ -60,6 +60,13 @@
                                 <strong>Welcome {{$root.session.user}}</strong>
                             </a>
                         </li>
+
+                        <li ng-if="$root.session && $root.session.user">
+                            <a href="" ng-click="$root.logOut()">
+                                <span class="fa fa-sign-out"></span> 
+                                <strong>Welcome {{$root.session.user}}</strong>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
