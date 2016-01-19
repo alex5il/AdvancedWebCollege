@@ -6,7 +6,7 @@ module.exports = {
   // get all the games
   getGames: function(callback) {
     console.log('*** accessDB.getGames');
-    Game.find({}, {'_id': 0, 'gameName':1, 'gameDec':1,'game':1,  'date': 1, 'pic':1, 'score': 1, 'cost': 1, 'id': 1, 'genre': 1}, function(err, games) {
+    Game.find({}, {'_id': 0, 'gameName':1, 'gameDesc':1,'game':1,  'date': 1, 'pic':1, 'score': 1, 'cost': 1, 'id': 1, 'genre': 1}, function(err, games) {
       callback(null, games);
     });
   },
@@ -14,7 +14,7 @@ module.exports = {
   // get a games
   getGame: function(id, callback) {
     console.log('*** accessDB.getGame');
-    Game.find({'id': id}, {'_id': 0, 'gameName':1, 'gameDec':1,'game':1,  'date': 1, 'pic':1, 'score': 1, 'cost': 1, 'id': 1, 'genre': 1}, function(err, game) {
+    Game.find({'id': id}, {'_id': 0, 'gameName':1, 'gameDesc':1,'game':1,  'date': 1, 'pic':1, 'score': 1, 'cost': 1, 'id': 1, 'genre': 1}, function(err, game) {
       callback(null, game[0]);
     });
   },
@@ -45,11 +45,11 @@ module.exports = {
   editGame: function(id, req_body, callback) {
     console.log('*** accessDB.editGame');
 
-    Game.findOne({'id': id}, {'_id':1, 'gameName':1, 'gameDec':1,'game':1,'pic':1, 'date': 1, 'score': 1, 'cost': 1, 'id': 1, 'genre': 1}, function(err, game) {
+    Game.findOne({'id': id}, {'_id':1, 'gameName':1, 'gameDesc':1,'game':1,'pic':1, 'date': 1, 'score': 1, 'cost': 1, 'id': 1, 'genre': 1}, function(err, game) {
       if (err) { return callback(err); }
 
       game.gameName = req_body.gameName || game.gameName;
-      game.gameDec = req_body.gameDec || game.gameDec;
+      game.gameDesc = req_body.gameDesc || game.gameDesc;
       game.pic = req_body.pic || game.pic;
       game.cost = req_body.cost || game.cost;
       game.score = req_body.score || game.score;
