@@ -14,6 +14,8 @@ require(
         'directives/gameCreateDirective',
         'directives/gameEditDirective',
         'directives/reviewCreateDirective',
+        'directives/reviewEditDirective',
+        'directives/reviewRemoveDirective',
         'directives/reviewsTableDirective',
         'directives/reviewsFilterDirective',
         'directives/webServiceDirective',

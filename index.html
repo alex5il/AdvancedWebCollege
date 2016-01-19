@@ -40,20 +40,17 @@
                         <li><a href="/reviews" class="titleAnimation">Reviews</a></li>
 
                         <!-- Admin view -->
-                        <!--<li class="dropdown">-->
-                            <!--<a href="/about" data-toggle="dropdown" class="dropdown-toggle titleAnimation" >Admin <b class="caret"></b></a>-->
-                            <!--<ul class="dropdown-menu">-->
-                                <!--<li><a href="/genres">Manage Genres</a></li>-->
-                                <!--<li><a href="/orders">Manage Transactions</a></li>-->
-                            <!--</ul>-->
-                        <!--</li>-->
+                        <li class="dropdown">
+                            <a href="/about" data-toggle="dropdown" class="dropdown-toggle titleAnimation" >Admin <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/genres">Manage Genres</a></li>
+                                <li><a href="/orders">Manage Transactions</a></li>
+                            </ul>
+                        </li>
 
 
                         <li><a href="/about" class="titleAnimation">About</a></li>
                         <li><a href="/contact" class="titleAnimation">Contact</a></li>
-                    </ul>
-
-                    <ul class="nav navbar-nav navbar-right" >
                         <li ng-if="!$root.session || !$root.session.user"><a href="/login" class="titleAnimation">Login</a></li>
                         <li ng-if="!$root.session || !$root.session.user"><a href="/register" class="titleAnimation">Register</a></li>
 
@@ -61,13 +58,6 @@
                             <a href="#">
                                 <span class="glyphicon glyphicon-user"></span> 
                                 <strong>Welcome {{$root.session.user}}</strong>
-                            </a>
-                        </li>
-
-                        <li ng-if="$root.session && $root.session.user">
-                            <a href="" ng-click="$root.logOut()">
-                                <span class="fa fa-sign-in" ></span> 
-                                <strong>Logout</strong>
                             </a>
                         </li>
                     </ul>
@@ -126,6 +116,7 @@
 
     <div ng-view="" id="ng-view" class="slide-animation"></div>
 
+
     <div data-wc-overlay="" data-wc-overlay-delay="300">
         <br /><img src="/Content/images/spinner.gif" />&nbsp;&nbsp;Loading
     </div>
@@ -145,6 +136,7 @@
     <script src="/Scripts/ui-bootstrap-tpls-0.14.3.min.js"></script>
     <script src="/Scripts/tweenMax.min.js"></script>
 
+
     <!-- Socket.io -->
     <script src="/socket.io/socket.io.js"></script>
     <script>
@@ -153,6 +145,7 @@
         socket.on('newGame', function (data) {
             alert(data.message + data.name);
         });
+
     </script>
 
     <!-- Load custom scripts via RequireJS -->
