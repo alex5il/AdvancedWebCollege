@@ -38,6 +38,7 @@ module.exports = function(app, passport) {
     app.post('/api/dataservice/PostGameReview', gameReviewApi.insertGameReview);
     app.get('/api/dataservice/reviewByFilters/?', gameReviewApi.byFilters);
     app.get('/api/dataservice/groupByScore/:gameName', gameReviewApi.groupByScore);
+    app.get('/api/dataservice/averageScore/:gameName', gameReviewApi.averageScore);
     app.get('/api/dataservice/deleteReview/:id', gameReviewApi.deleteGameReview);
 
     // =====================================
