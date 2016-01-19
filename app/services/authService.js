@@ -19,7 +19,7 @@ define(['app'], function (app) {
                 .success(function (data, status) {
                     if(status === 200 && data){
                         $window.sessionStorage.setItem('user-email', user.email);
-                        $window.sessionStorage.setItem('admin', data.local.isAdmin);
+                        $window.sessionStorage.setItem('admin', !!data.local.isAdmin);
                         $location.path("/");
                         $rootScope.session.user = user.email.toString();
 
@@ -48,7 +48,7 @@ define(['app'], function (app) {
         };
 
         authFactory.isLoggedIn = function () {
-            if($window.sessionStorage.getItem('user-email')) {
+            if(!!$window.sessionStorage.getItem('user-email')) {
                 return true;
             } else {
                 return false;
@@ -56,7 +56,7 @@ define(['app'], function (app) {
         };
 
         var isStartupAdmin = function () {
-            if($window.sessionStorage.getItem('admin')) {
+            if(!!$window.sessionStorage.getItem('admin') && $window.sessionStorage.getItem('admin') !== "false") {
                 return true;
             } else {
                 return false;
@@ -136,7 +136,7 @@ define(['app'], function (app) {
                 .success(function (data, status) {
                     if(status === 200 && data){
                         $window.sessionStorage.setItem('user-email', user.email);
-                        $window.sessionStorage.setItem('admin', user.isAdmin);
+                        $window.sessionStorage.setItem('admin', !!user.isAdmin);
                         $location.path("/");
                         $rootScope.session.user = user.email;
 
