@@ -77,7 +77,6 @@ define(['app'], function (app) {
                 $http.post(serviceBase + 'admin', user)
                     // handle success
                     .success(function (data, status) {
-                        console.log(data);
                         if(status === 200 && data){
                             $rootScope.isAdmin = true;
                             deferred.resolve(true);
@@ -137,11 +136,11 @@ define(['app'], function (app) {
                 .success(function (data, status) {
                     if(status === 200 && data){
                         $window.sessionStorage.setItem('user-email', user.email);
-                        $window.sessionStorage.setItem('admin', data.local.isAdmin);
+                        $window.sessionStorage.setItem('admin', user.isAdmin);
                         $location.path("/");
                         $rootScope.session.user = user.email;
 
-                        $rootScope.isAdmin = data.local.isAdmin;
+                        $rootScope.isAdmin = user.isAdmin;
 
                         deferred.resolve();
                     } else {
