@@ -3,7 +3,7 @@
 <form class="form-inline" ng-if="filters.type === 'catalog'">
     <div class="form-group large-margin-right">
         <label class="small-margin-right">Game Title:</label>
-        <input type="text" class="form-control large-input" placeholder="Fallout" ng-model="inputFilters.gameName">
+        <input type="text" class="form-control large-input" placeholder="Game Title" ng-model="inputFilters.gameName">
     </div>
     <div class="form-group large-margin-right">
         <label class="small-margin-right">Genre:</label>
@@ -29,7 +29,7 @@
 
     <div class="form-group large-margin-right">
         <label class="small-margin-right">Score Above:</label>
-        <input type="number" min="1" max="100" class="form-control small-input" placeholder="80" ng-model="inputFilters.score">
+        <input type="number" min="1" max="100" class="form-control small-input" placeholder="Score" ng-model="inputFilters.score">
     </div>
 
     <button type="submit" class="btn btn-primary pull-right" ng-click="filterReviews()">Search</button>
