@@ -47,6 +47,14 @@ define(['app'], function (app) {
             return deferred.promise;
         };
 
+        authFactory.isLoggedInAndAdmin = function () {
+            if(!!$window.sessionStorage.getItem('user-email') && !isStartupAdmin()) {
+                return true;
+            } else {
+                return false;
+            }
+        };
+
         authFactory.isLoggedIn = function () {
             if(!!$window.sessionStorage.getItem('user-email')) {
                 return true;
