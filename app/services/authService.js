@@ -56,10 +56,10 @@ define(['app'], function (app) {
         };
 
         var isStartupAdmin = function () {
-            if(!!$window.sessionStorage.getItem('admin') && $window.sessionStorage.getItem('admin') !== "false") {
-                return true;
-            } else {
+            if(!$window.sessionStorage.getItem('admin') || $window.sessionStorage.getItem('admin') === "false") {
                 return false;
+            } else {
+                return true;
             }
         };
 
