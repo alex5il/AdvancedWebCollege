@@ -63,6 +63,13 @@
                                 <strong>Welcome {{$root.session.user}}</strong>
                             </a>
                         </li>
+
+                        <li ng-if="$root.session && $root.session.user">
+                            <a href="#">
+                                <span class="fa fa-sign-in" ></span> 
+                                <strong>Logout</strong>
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -113,10 +120,7 @@
         </section>
     </header>
 
-    {{$root.session}}
-
     <div ng-view="" id="ng-view" class="slide-animation"></div>
-
 
     <div data-wc-overlay="" data-wc-overlay-delay="300">
         <br /><img src="/Content/images/spinner.gif" />&nbsp;&nbsp;Loading
