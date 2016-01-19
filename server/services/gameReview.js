@@ -81,7 +81,11 @@ module.exports = {
                 "score": {"$avg": "$score"}
             }
         }], function (err, gameReview) {
-            callback(null, gameReview[0].score);
+            if (gameReview.length > 0 && !err) {
+                callback(null, gameReview[0].score);
+            } else {
+                callback(err);
+            }
         });
     },
 
