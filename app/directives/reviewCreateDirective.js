@@ -1,8 +1,8 @@
 'use strict';
 
-define(['app', 'services/gamesService', 'services/reviewsService'], function (app) {
+define(['app', 'services/gamesService', 'services/reviewsService', 'services/authService'], function (app) {
 
-    var reviewCreateDirective = function (gamesService, reviewsService, $rootScope) {
+    var reviewCreateDirective = function (gamesService, reviewsService, authService, $rootScope) {
         return {
             restrict: 'E',
             templateUrl: "/app/views/templates/reviewCreate.html",
@@ -42,9 +42,11 @@ define(['app', 'services/gamesService', 'services/reviewsService'], function (ap
                     }
 
                 }
+
+                scope.isLoggedIn = authService.isLoggedIn();
             }
         }
     };
 
-    app.directive('reviewCreateDirective', ['gamesService', 'reviewsService', '$rootScope', reviewCreateDirective]);
+    app.directive('reviewCreateDirective', ['gamesService', 'reviewsService', 'authService', '$rootScope', reviewCreateDirective]);
 });
