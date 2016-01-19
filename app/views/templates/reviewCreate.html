@@ -1,4 +1,4 @@
-<button class="btn btn-primary fromAnimation" ng-click="showme=true" ng-hide="showme">{{edit}} Review</button>
+<button class="btn btn-primary fromAnimation" ng-click="showme=true" ng-hide="showme" ng-disabled="!$root.isAdmin && edit === 'Edit'">{{edit}} Review</button>
 
 <form id="frm" name="frm" ng-show="showme" style="margin-left: 30px" class="fromAnimation">
     <h5>Add Review</h5>
@@ -21,7 +21,6 @@
         <label>Review:</label>
         <textarea form="frm" type="text" class="form-control reviewText" placeholder="Write your review here" ng-model="review.content"></textarea>
     </div>
-
-    <button type="submit" class="btn btn-success" data-ng-click="createReview(review); showme=false">{{edit}} review</button>
+    <button type="submit" class="btn btn-success" data-ng-click="createReview(review); showme=false">{{edit}} Review</button>
     <button class="btn btn-default" ng-click="showme=false" formnovalidate>Cancel</button>
 </form>
