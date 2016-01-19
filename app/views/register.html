@@ -17,6 +17,11 @@
                     <input type="password" class="form-control" name="password" ng-model="user.password">
                 </div>
 
+                <div class="form-group">
+                    <label>Admin?</label>
+                    <input type="checkbox" class="form-control" name="admin" ng-model="user.isAdmin">
+                </div>
+
                 <button type="submit" class="btn btn-warning btn-lg" ng-click="registerAction(user)">Signup</button>
             </form>
 

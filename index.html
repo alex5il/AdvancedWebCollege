@@ -120,6 +120,10 @@
         </section>
     </header>
 
+     HOW TO USE isADMIN --- FOR ANTON
+    <label ng-if="$root.isAdmin">admin</label>
+    <label ng-if="!$root.isAdmin">not admin</label>
+
     <div ng-view="" id="ng-view" class="slide-animation"></div>
 
     <div data-wc-overlay="" data-wc-overlay-delay="300">

@@ -8,7 +8,8 @@ var userSchema = mongoose.Schema({
 
   local            : {
     email        : String,
-    password     : String
+    password     : String,
+    isAdmin     : Boolean
   },
   facebook         : {
     id           : String,
@@ -40,6 +41,11 @@ userSchema.methods.generateHash = function(password) {
 // checking if password is valid
 userSchema.methods.validPassword = function(password) {
   return bcrypt.compareSync(password, this.local.password);
+};
+
+// checking if user is an admin
+userSchema.methods.isAdmin = function() {
+  return this.local.isAdmin;
 };
 
 // create the model for users and expose it to our app

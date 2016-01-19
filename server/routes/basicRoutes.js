@@ -4,6 +4,7 @@
 var routes = require('../routes'),
     customerApi = require('../routes/api/customer'),
     user = require('../models/user.js'),
+    db = db = require('../accessDB'),
     mongoose = require('mongoose'),
     User = require('../models/user');
     gameApi = require('../routes/api/game');
@@ -44,6 +45,14 @@ module.exports = function(app, passport) {
 
     app.post('/api/login', passport.authenticate('local-login'),
         function(req, res) {
+            user.find({'local.email': req.body.email}, {}, function(err, user) {
+                res.json(user[0]);
+            });
+        }
+    );
+
+    app.post('/api/admin', passport.authenticate('local-is-admin'),
+        function(req, res) {
             res.send(200);
         }
     );
@@ -58,22 +67,13 @@ module.exports = function(app, passport) {
     }));
 
     // =====================================
-    // PROFILE SECTION =====================
-    // =====================================
-    // we will want this protected so you have to be logged in to visit
-    // we will use route middleware to verify this (the isLoggedIn function)
-    app.get('/api/profile', isLoggedIn, function(req, res) {
-        res.render('profile.ejs', {
-            user : req.user // get the user out of session and pass to template
-        });
-    });
-
-    // =====================================
     // LOGOUT ==============================
     // =====================================
-    app.get('/api/logout', function(req, res) {
-        req.logout();
-        res.send(200);
+    app.get('/api/logout', function(req,res){
+        req.logOut();
+        req.session.destroy(function (err) {
+            res.redirect('/'); //Inside a callback… bulletproof!
+        });
     });
 
     app.get('/', routes.index);
