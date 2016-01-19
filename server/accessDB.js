@@ -31,6 +31,7 @@ module.exports = {
   deleteGameReview : GameReviewService.deleteGameReview,
   getGamesReviewByFilter : GameReviewService.getGamesReviewByFilter,
   groupByScore : GameReviewService.groupByScore,
+  averageScore : GameReviewService.averageScore,
 
   getGames : GameService.getGames,
   getGame : GameService.getGame,

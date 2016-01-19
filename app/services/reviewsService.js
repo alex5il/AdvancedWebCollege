@@ -67,6 +67,12 @@ define (['app'], function (app){
             });
         };
 
+        reviewsFactory.averageScore = function (gameName) {
+            return $http.get(serviceBase + 'averageScore/' + gameName).then(function (status){
+                return status.data;
+            });
+        };
+
         reviewsFactory.deleteReview = function (review) {
             return $http.get(serviceBase + 'deleteReview/' + review.id, review).then(function (status){
                 return status.data;
