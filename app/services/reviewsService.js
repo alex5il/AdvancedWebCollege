@@ -56,7 +56,7 @@ define (['app'], function (app){
         };
 
         reviewsFactory.updateReview = function (review) {
-            return $http.put(serviceBase + 'PostGameReview/' + game.id, game).then(function (status){
+            return $http.put(serviceBase + 'PutGameReview/' + review.id, review).then(function (status){
                 return status.data;
             });
         };
