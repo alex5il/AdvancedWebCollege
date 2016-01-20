@@ -24,6 +24,8 @@ define(['app'], function (app) {
                         $rootScope.session.user = user.email.toString();
 
                         $rootScope.isAdmin = data.local.isAdmin;
+						
+						$rootScope.isLoggedIn = true; 
 
                         user = true;
                         deferred.resolve();
@@ -33,6 +35,8 @@ define(['app'], function (app) {
                         user = false;
                         $rootScope.isAdmin = false;
                         $rootScope.session.user = undefined;
+						
+						$rootScope.isLoggedIn = false;
 
                         deferred.reject();
                     }
@@ -40,6 +44,7 @@ define(['app'], function (app) {
                 // handle error
                 .error(function (data) {
                     user = false;
+					$rootScope.isLoggedIn = false;
                     deferred.reject();
                 });
 
@@ -57,8 +62,10 @@ define(['app'], function (app) {
 
         authFactory.isLoggedIn = function () {
             if(!!$window.sessionStorage.getItem('user-email')) {
+				$rootScope.isLoggedIn = true;
                 return true;
             } else {
+				$rootScope.isLoggedIn = false;
                 return false;
             }
         };
@@ -117,6 +124,7 @@ define(['app'], function (app) {
                     $rootScope.session.user = undefined;
                     user = false;
 
+					$rootScope.isLoggedIn = false;
                     $rootScope.isAdmin = false;
                     deferred.resolve();
                 })
@@ -149,6 +157,7 @@ define(['app'], function (app) {
                         $rootScope.session.user = user.email;
 
                         $rootScope.isAdmin = user.isAdmin;
+						$rootScope.isLoggedIn = true;
 
                         deferred.resolve();
                     } else {
